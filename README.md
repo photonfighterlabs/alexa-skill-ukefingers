@@ -1,2 +1,2 @@
 # alexa-skill-ukulelefingers
-Alexa skill that tells you how to position your fingers for ukulele chords
+An Alexa Skill called "Ukulele Fingers" that tells the user the finger positions for ukulele chords
