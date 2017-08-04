@@ -1,0 +1,340 @@
+{
+  "intents": [
+    {
+      "name": "AMAZON.CancelIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "samples": []
+    },
+    {
+      "name": "getFingers",
+      "samples": [
+        "what is the position for {CHORD} chord",
+        "what is the fingering for {CHORD} chord",
+        "how do I play the {CHORD} chord",
+        "how do I play a {CHORD} chord",
+        "how do you play a {CHORD} chord",
+        "how do you play the {CHORD} chord",
+        "how do you play an {CHORD} chord",
+        "how do I play an {CHORD} chord"
+      ],
+      "slots": [
+        {
+          "name": "CHORD",
+          "type": "Chord",
+          "samples": []
+        }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "Chord",
+      "values": [
+        {
+          "id": null,
+          "name": {
+            "value": "A",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Am",
+            "synonyms": [
+              "A minor"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Aaug",
+            "synonyms": [
+              "Augmented A",
+              "A augmented"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Adim",
+            "synonyms": [
+              "A diminished",
+              "Diminished a"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "A7",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Am7",
+            "synonyms": [
+              "A minor 7"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Amaj7",
+            "synonyms": [
+              "A major 7"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "A6",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Am6",
+            "synonyms": [
+              "A minor 6"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Amaj6",
+            "synonyms": [
+              "A major 6"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Aadd9",
+            "synonyms": [
+              "A added 9",
+              "A added 9th"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Am9",
+            "synonyms": [
+              "A minor 9"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "A9",
+            "synonyms": []
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Asus2",
+            "synonyms": [
+              "A suspended 2"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Asus4",
+            "synonyms": [
+              "A suspended 4"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "A7sus4",
+            "synonyms": [
+              "A 7 suspended 4"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Bb",
+            "synonyms": [
+              "B flat",
+              "A sharp"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Bbm",
+            "synonyms": [
+              "B flat minor"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Bbaug",
+            "synonyms": [
+              "Augmented B flat",
+              "B flat augmented"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Bbdim",
+            "synonyms": [
+              "Diminished B flat",
+              "B flat diminished"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Bb7",
+            "synonyms": [
+              "B flat 7"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Bbm7",
+            "synonyms": [
+              "B flat minor 7"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Bbmaj7",
+            "synonyms": [
+              "B flat major 7"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Bb6",
+            "synonyms": [
+              "B flat 6"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Bbm6",
+            "synonyms": [
+              "B flat minor 6"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Bbadd9",
+            "synonyms": [
+              "B flat added 9th",
+              "B flat added 9"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Bbm9",
+            "synonyms": [
+              "B flat minor 9"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Bb9",
+            "synonyms": [
+              "B flat 9"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Bbsus2",
+            "synonyms": [
+              "B flat suspended 2"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Bbsus4",
+            "synonyms": [
+              "B flat suspended 4"
+            ]
+          }
+        },
+        {
+          "id": null,
+          "name": {
+            "value": "Bb7sus4",
+            "synonyms": [
+              "B flat 7 suspended 4"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "version": "1.0",
+    "intents": [
+      {
+        "name": "getFingers",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "CHORD",
+            "type": "Chord",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {}
+          }
+        ]
+      }
+    ]
+  }
+}
