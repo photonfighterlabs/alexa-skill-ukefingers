@@ -17,3 +17,7 @@ I wanted to challenge myself to try to develop something outside of class assign
 ## Authors
 
 * **Maxwell Walters** - [warpaltarpers](https://github.com/warpaltarpers)
+
+## License
+
+Ukulele Fingers is licensed under the GNU Affero General Public License v3.0
