@@ -20,4 +20,4 @@ I wanted to challenge myself to try to develop something outside of class assign
 
 ## License
 
-Ukulele Fingers is licensed under the GNU Affero General Public License v3.0
+Ukulele Fingers is licensed under the MIT License
