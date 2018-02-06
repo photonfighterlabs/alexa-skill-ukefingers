@@ -1796,11 +1796,51 @@
         "slots": [
           {
             "name": "CHORD",
-            "type": "ukuleleChords"
+            "type": "ukuleleChords",
+            "samples": [
+              "{CHORD}",
+              "The {CHORD} chord",
+              "I want to learn the {CHORD} chord"
+            ]
           }
         ]
       }
     ],
     "invocationName": "ukulele fingers"
+  },
+  "prompts": [
+    {
+      "id": "Elicit.Intent-getFingers.IntentSlot-CHORD",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What chord did you want to learn?"
+        },
+        {
+          "type": "PlainText",
+          "value": "Which chord did you want to learn?"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "intents": [
+      {
+        "name": "getFingers",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "CHORD",
+            "type": "ukuleleChords",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-getFingers.IntentSlot-CHORD"
+            }
+          }
+        ]
+      }
+    ]
   }
 }
