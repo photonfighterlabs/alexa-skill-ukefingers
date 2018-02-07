@@ -2,6 +2,7 @@
   "languageModel": {
     "types": [
       {
+        // 185 chords of pure hell
         "name": "ukuleleChords",
         "values": [
           {
