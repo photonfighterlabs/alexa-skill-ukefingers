@@ -1,6 +1,7 @@
-/* eslint-disable  func-names */
-/* eslint quote-props: ["error", "consistent"]*/
-
+/*
+All of this code is from the fact skill template 
+It does not represent how 'Ukulele Fingers' is supposed to work
+*/
 'use strict';
 
 const Alexa = require('alexa-sdk');
