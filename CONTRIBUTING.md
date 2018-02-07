@@ -9,9 +9,9 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 ```
 # [TITLE]
-#### [DESCRIPTION]
+### [DESCRIPTION]
 
-## What has been added?
+## What has been changed/added?
 * [INSERT ADDITIONS HERE]
 
 ## Known Issues
