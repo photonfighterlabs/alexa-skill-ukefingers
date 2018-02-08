@@ -1789,36 +1789,38 @@ const handlers = {
         this.response.speak('To play the A chord, put your index finger on the first fret of the third string, and put your\
         middle finger on the second fret of the fourth string');
         break;
-      case "a minor": // TODO: TEST
+      case "a minor":
         this.response.speak('To play the A minor chord, put your middle finger on the second fret of the fourth string');
         break;
-      case "a augmented": // TODO: TEST
+      case "a augmented":
         this.response.speak('To play the A augmented chord, put your index finger on the second fret of the fourth string,\
         put your middle finger on the first fret of the third string, put your ring finger on the first fret of the second string,\
         and put your pinkie finger on the fourth fret of the first string');
         break;
-      case "a diminished": // TODO: finish writing A diminished
-        this.response.speak('To play the A diminished chord, put ');
+      case "a diminished":
+        this.response.speak('To play the A diminished chord, put your index finger on the second fret of the fourth string,\
+        put your middle finger on the third fret of the third string, put your ring finger on the second fret of the second string,\
+        and put your pinkie finger on the third fret of the first string');
         break;
-      case "a 7th": // TODO: TEST
+      case "a 7th":
         this.response.speak('To play the A seventh chord, put your index finger on the first fret of the third string');
         break;
-      case "a minor 7th": // TODO: TEST
+      case "a minor 7th":
         this.response.speak('To play the A minor seventh chord, you don\'t need to hold any strings');
         break;
-      case "a major 7th": // TODO: TEST
+      case "a major 7th":
         this.response.speak('To play the A major seventh chord, put your index finger on the first fret of the fourth string,\
         and put your middle finger on the first fret of the third string');
         break;
-      case "a 6th": // TODO: TEST
+      case "a 6th":
         this.response.speak('To play the A sixth chord, put your index finger on the second fret of the fourth string,\
         put your middle finger on the first fret of the third string, and put your ring finger on the second fret of the second string');
         break;
-      case "a minor 6th": // TODO: TEST
+      case "a minor 6th":
         this.response.speak('To play the A minor sixth chord, put your index finger on the second fret of the fourth string, and put\
         your ring finger on the second fret of the second string');
         break;
-      case "a add 9th": // TODO: TEST
+      case "a add 9th":
         this.response.speak('To play the A add ninth chord, put your middle finger on the second fret of the fourth string,\
         put your index finger on the first fret of the third string, and put your pinkie finger on the second fret of the first string');
         break;
