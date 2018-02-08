@@ -1780,14 +1780,17 @@ const handlers = {
     this.emit(':responseReady');
   },
   'getFingers': function () {
-    this.attributes['chordRequest'] = this.event.request.languageModel.types.values.name.value;
+    // Setting up 'chord2learn' variable based on 'chordRequest' attribute
+    this.attributes['chordRequest'] = this.event.request.intent.slots.CHORD.value;
     var chord2learn = this.attributes['chordRequest'];
+    // Switch statment to find what chord is being requested and give a response
     switch (chord2learn){
-      case "A":
-        this.response.tell('To play the A chord, put your index finger on the first fret of the third string, and put your\
+      case "a":
+        this.response.speak('To play the A chord, put your index finger on the first fret of the third string, and put your\
         middle finger on the second fret of the fourth string');
         break;
     }
+    this.emit(':responseReady');
   },
   'AMAZON.HelpIntent': function () {
     const speechOutput = this.t('HELP_MESSAGE');
