@@ -1814,6 +1814,14 @@ const handlers = {
         this.response.speak('To play the A sixth chord, put your index finger on the second fret of the fourth string,\
         put your middle finger on the first fret of the third string, and put your ring finger on the second fret of the second string');
         break;
+      case "a minor 6th": // TODO: TEST
+        this.response.speak('To play the A minor sixth chord, put your index finger on the second fret of the fourth string, and put\
+        your ring finger on the second fret of the second string');
+        break;
+      case "a add 9th": // TODO: TEST
+        this.response.speak('To play the A add ninth chord, put your middle finger on the second fret of the fourth string,\
+        put your index finger on the first fret of the third string, and put your pinkie finger on the second fret of the first string');
+        break;
     }
     this.emit(':responseReady');
   },
