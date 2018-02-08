@@ -1775,10 +1775,17 @@ const handlers = {
     this.attributes['chordRequest'] = "";
     // Alexa's speech output for welcoming user
     this.response.speak("Welcome to Ukulele Fingers! What chord would you like to learn?").listen("What chord would you like to learn?");
-    // TODO: Add function that tells user what chord to play
+    this.emit(':responseReady');
   },
   'getFingers': function () {
-    // TODO: Add function that tells user what chord to play
+    this.attributes['chordRequest'] = this.event.request.languageModel.types.values.name.value;
+    var chord2learn = this.attributes['chordRequest'];
+    switch (chord2learn){
+      case "A":
+        this.response.tell('To play the A chord, put your index finger on the first fret of the third string, and put your\
+        middle finger on the second fret of the fourth string');
+        break;
+    }
   },
   'AMAZON.HelpIntent': function () {
     const speechOutput = this.t('HELP_MESSAGE');
@@ -1795,7 +1802,6 @@ const handlers = {
 
 exports.handler = function (event, context) {
   const alexa = Alexa.handler(event, context);
-  alexa.APP_ID = APP_ID;
   alexa.registerHandlers(handlers);
   alexa.execute();
 };
