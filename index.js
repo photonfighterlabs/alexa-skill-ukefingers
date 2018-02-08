@@ -1784,6 +1784,7 @@ const handlers = {
     this.attributes['chordRequest'] = this.event.request.intent.slots.CHORD.value;
     var chord2learn = this.attributes['chordRequest'];
     // Switch statment to find what chord is being requested and give a response
+    // Chord descriptions based on https://ukuchords.com/files/UkuChords_Complete180ChordChartsPoster_Standard.png?x37163
     switch (chord2learn){ // TODO: Add the other 175 chords
       case "a":
         this.response.speak('To play the A chord, put your index finger on the first fret of the third string, and put your\
