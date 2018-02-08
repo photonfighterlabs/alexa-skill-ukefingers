@@ -1,140 +1,1801 @@
-/*
-All of this code is from the fact skill template 
-It does not represent how 'Ukulele Fingers' is supposed to work
-*/
 'use strict';
 
 const Alexa = require('alexa-sdk');
 
-const APP_ID = undefined;  // TODO replace with your app ID (OPTIONAL).
-
-const languageStrings = {
-    'en': {
-        translation: {
-            FACTS: [
-                'A year on Mercury is just 88 days long.',
-                'Despite being farther from the Sun, Venus experiences higher temperatures than Mercury.',
-                'Venus rotates anti-clockwise, possibly because of a collision in the past with an asteroid.',
-                'On Mars, the Sun appears about half the size as it does on Earth.',
-                'Earth is the only planet not named after a god.',
-                'Jupiter has the shortest day of all the planets.',
-                'The Milky Way galaxy will collide with the Andromeda Galaxy in about 5 billion years.',
-                'The Sun contains 99.86% of the mass in the Solar System.',
-                'The Sun is an almost perfect sphere.',
-                'A total solar eclipse can happen once every 1 to 2 years. This makes them a rare event.',
-                'Saturn radiates two and a half times more energy into space than it receives from the sun.',
-                'The temperature inside the Sun can reach 15 million degrees Celsius.',
-                'The Moon is moving approximately 3.8 cm away from our planet every year.',
-            ],
-            SKILL_NAME: 'Space Facts',
-            GET_FACT_MESSAGE: "Here's your fact: ",
-            HELP_MESSAGE: 'You can say tell me a space fact, or, you can say exit... What can I help you with?',
-            HELP_REPROMPT: 'What can I help you with?',
-            STOP_MESSAGE: 'Goodbye!',
-        },
-    },
-    'en-US': {
-        translation: {
-            FACTS: [
-                'A year on Mercury is just 88 days long.',
-                'Despite being farther from the Sun, Venus experiences higher temperatures than Mercury.',
-                'Venus rotates counter-clockwise, possibly because of a collision in the past with an asteroid.',
-                'On Mars, the Sun appears about half the size as it does on Earth.',
-                'Earth is the only planet not named after a god.',
-                'Jupiter has the shortest day of all the planets.',
-                'The Milky Way galaxy will collide with the Andromeda Galaxy in about 5 billion years.',
-                'The Sun contains 99.86% of the mass in the Solar System.',
-                'The Sun is an almost perfect sphere.',
-                'A total solar eclipse can happen once every 1 to 2 years. This makes them a rare event.',
-                'Saturn radiates two and a half times more energy into space than it receives from the sun.',
-                'The temperature inside the Sun can reach 15 million degrees Celsius.',
-                'The Moon is moving approximately 3.8 cm away from our planet every year.',
-            ],
-            SKILL_NAME: 'American Space Facts',
-        },
-    },
-    'en-GB': {
-        translation: {
-            FACTS: [
-                'A year on Mercury is just 88 days long.',
-                'Despite being farther from the Sun, Venus experiences higher temperatures than Mercury.',
-                'Venus rotates anti-clockwise, possibly because of a collision in the past with an asteroid.',
-                'On Mars, the Sun appears about half the size as it does on Earth.',
-                'Earth is the only planet not named after a god.',
-                'Jupiter has the shortest day of all the planets.',
-                'The Milky Way galaxy will collide with the Andromeda Galaxy in about 5 billion years.',
-                'The Sun contains 99.86% of the mass in the Solar System.',
-                'The Sun is an almost perfect sphere.',
-                'A total solar eclipse can happen once every 1 to 2 years. This makes them a rare event.',
-                'Saturn radiates two and a half times more energy into space than it receives from the sun.',
-                'The temperature inside the Sun can reach 15 million degrees Celsius.',
-                'The Moon is moving approximately 3.8 cm away from our planet every year.',
-            ],
-            SKILL_NAME: 'British Space Facts',
-        },
-    },
-    'de': {
-        translation: {
-            FACTS: [
-                'Ein Jahr dauert auf dem Merkur nur 88 Tage.',
-                'Die Venus ist zwar weiter von der Sonne entfernt, hat aber höhere Temperaturen als Merkur.',
-                'Venus dreht sich entgegen dem Uhrzeigersinn, möglicherweise aufgrund eines früheren Zusammenstoßes mit einem Asteroiden.',
-                'Auf dem Mars erscheint die Sonne nur halb so groß wie auf der Erde.',
-                'Die Erde ist der einzige Planet, der nicht nach einem Gott benannt ist.',
-                'Jupiter hat den kürzesten Tag aller Planeten.',
-                'Die Milchstraßengalaxis wird in etwa 5 Milliarden Jahren mit der Andromeda-Galaxis zusammenstoßen.',
-                'Die Sonne macht rund 99,86 % der Masse im Sonnensystem aus.',
-                'Die Sonne ist eine fast perfekte Kugel.',
-                'Eine Sonnenfinsternis kann alle ein bis zwei Jahre eintreten. Sie ist daher ein seltenes Ereignis.',
-                'Der Saturn strahlt zweieinhalb mal mehr Energie in den Weltraum aus als er von der Sonne erhält.',
-                'Die Temperatur in der Sonne kann 15 Millionen Grad Celsius erreichen.',
-                'Der Mond entfernt sich von unserem Planeten etwa 3,8 cm pro Jahr.',
-            ],
-            SKILL_NAME: 'Weltraumwissen auf Deutsch',
-            GET_FACT_MESSAGE: 'Hier sind deine Fakten: ',
-            HELP_MESSAGE: 'Du kannst sagen, „Nenne mir einen Fakt über den Weltraum“, oder du kannst „Beenden“ sagen... Wie kann ich dir helfen?',
-            HELP_REPROMPT: 'Wie kann ich dir helfen?',
-            STOP_MESSAGE: 'Auf Wiedersehen!',
-        },
-    },
+// Exhaustive list of chords
+const ukuleleChordsList = {
+  "languageModel": {
+    "types": [
+      {
+        "name": "ukuleleChords",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "A",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Am",
+              "synonyms": [
+                "A minor"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Aaug",
+              "synonyms": [
+                "A augmented"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Adim",
+              "synonyms": [
+                "A diminished"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "A7",
+              "synonyms": [
+                "A seventh"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Am7",
+              "synonyms": [
+                "A minor seventh",
+                "A minor 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Amaj7",
+              "synonyms": [
+                "A major seventh",
+                "A major 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "A6",
+              "synonyms": [
+                "A sixth"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Am6",
+              "synonyms": [
+                "A minor sixth",
+                "A minor 6"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Amaj6",
+              "synonyms": [
+                "A major sixth",
+                "A major 6"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Aadd9",
+              "synonyms": [
+                "A add ninth",
+                "A add 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Am9",
+              "synonyms": [
+                "A minor ninth",
+                "A minor 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "A9",
+              "synonyms": [
+                "A ninth"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Asus2",
+              "synonyms": [
+                "A suspended second",
+                "A suspended 2"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Asus4",
+              "synonyms": [
+                "A suspended fourth",
+                "A suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "A7sus4",
+              "synonyms": [
+                "A seventh suspended fourth",
+                "A 7 suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bb",
+              "synonyms": [
+                "B flat"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bbm",
+              "synonyms": [
+                "B flat minor"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bbaug",
+              "synonyms": [
+                "B flat augmented"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bbdim",
+              "synonyms": [
+                "B flat diminished"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bb7",
+              "synonyms": [
+                "B flat seventh",
+                "B flat 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bbm7",
+              "synonyms": [
+                "B flat minor seventh",
+                "B flat minor 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bbmaj7",
+              "synonyms": [
+                "B flat major seventh",
+                "B flat major 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bb6",
+              "synonyms": [
+                "B flat sixth",
+                "B flat 6"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bbm6",
+              "synonyms": [
+                "B flat minor sixth",
+                "B flat minor 6"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bbadd9",
+              "synonyms": [
+                "B flat add ninth",
+                "B flat add 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bbm9",
+              "synonyms": [
+                "B flat minor ninth",
+                "B flat minor 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bb9",
+              "synonyms": [
+                "B flat ninth",
+                "B flat 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bbsus2",
+              "synonyms": [
+                "B flat suspended second",
+                "B flat suspended 2"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bbsus4",
+              "synonyms": [
+                "B flat suspended fourth",
+                "B flat suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bb7sus4",
+              "synonyms": [
+                "B flat seventh suspended fourth",
+                "B flat 7 suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "B",
+              "synonyms": [
+                "B"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bm",
+              "synonyms": [
+                "B minor"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Baug",
+              "synonyms": [
+                "B augmented"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bdim",
+              "synonyms": [
+                "B diminished"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "B7",
+              "synonyms": [
+                "B seventh"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bm7",
+              "synonyms": [
+                "B minor seventh",
+                "B minor 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bmaj7",
+              "synonyms": [
+                "B major seventh",
+                "B major 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "B6",
+              "synonyms": [
+                "B sixth"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bm6",
+              "synonyms": [
+                "B minor sixth",
+                "B minor 6"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Badd9",
+              "synonyms": [
+                "B add ninth",
+                "B add 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bm9",
+              "synonyms": [
+                "B minor ninth",
+                "B minor 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bsus2",
+              "synonyms": [
+                "B suspended second",
+                "B suspended 2"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Bsus4",
+              "synonyms": [
+                "B suspended fourth",
+                "B suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "B7sus4",
+              "synonyms": [
+                "B seventh suspended fourth",
+                "B 7 suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "C",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Cm",
+              "synonyms": [
+                "C minor"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Caug",
+              "synonyms": [
+                "C augmented"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Cdim",
+              "synonyms": [
+                "C diminished"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "C7",
+              "synonyms": [
+                "C seventh"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Cm7",
+              "synonyms": [
+                "C minor seventh",
+                "C minor 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Cmaj7",
+              "synonyms": [
+                "C major seventh",
+                "C major 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "C6",
+              "synonyms": [
+                "C sixth"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Cm6",
+              "synonyms": [
+                "C minor sixth",
+                "C minor 6"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Cadd9",
+              "synonyms": [
+                "C add ninth",
+                "C add 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Cm9",
+              "synonyms": [
+                "C minor ninth",
+                "C minor 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "C9",
+              "synonyms": [
+                "C ninth"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Csus2",
+              "synonyms": [
+                "C suspended second",
+                "C suspended 2"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Csus4",
+              "synonyms": [
+                "C suspended fourth",
+                "C suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "C7sus4",
+              "synonyms": [
+                "C seventh suspended fourth",
+                "C 7 suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Db",
+              "synonyms": [
+                "D flat"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Dbm",
+              "synonyms": [
+                "D flat minor"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Dbaug",
+              "synonyms": [
+                "D flat augmented"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Dbdim",
+              "synonyms": [
+                "D flat diminished"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Db7",
+              "synonyms": [
+                "D flat seventh",
+                "D flat 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Dbm7",
+              "synonyms": [
+                "D flat minor seventh",
+                "D flat minor 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Dbmaj7",
+              "synonyms": [
+                "D flat major seventh",
+                "D flat major 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Db6",
+              "synonyms": [
+                "D flat sixth",
+                "D flat 6"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Dbm6",
+              "synonyms": [
+                "D flat minor sixth",
+                "D flat minor 6"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Dbadd9",
+              "synonyms": [
+                "D flat add ninth",
+                "D flat add 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Dbm9",
+              "synonyms": [
+                "D flat minor ninth",
+                "D flat minor 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Db9",
+              "synonyms": [
+                "D flat ninth",
+                "D flat 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Dbsus2",
+              "synonyms": [
+                "D flat suspended second",
+                "D flat suspended 2"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Dbsus4",
+              "synonyms": [
+                "D flat suspended fourth",
+                "D flat suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Db7sus4",
+              "synonyms": [
+                "D flat seventh suspended fourth",
+                "D flat 7 suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "D",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Dm",
+              "synonyms": [
+                "D minor"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Daug",
+              "synonyms": [
+                "D augmented"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "D7",
+              "synonyms": [
+                "D seventh"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Dm7",
+              "synonyms": [
+                "D minor seventh",
+                "D minor 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Dmaj7",
+              "synonyms": [
+                "D major seventh",
+                "D major 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "D6",
+              "synonyms": [
+                "D sixth"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Dm6",
+              "synonyms": [
+                "D minor 6",
+                "D minor sixth"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Dadd9",
+              "synonyms": [
+                "D add ninth",
+                "D add 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Dm9",
+              "synonyms": [
+                "D minor ninth",
+                "D minor 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "D9",
+              "synonyms": [
+                "D ninth"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Dsus2",
+              "synonyms": [
+                "D suspended second",
+                "D suspended 2"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Dsus4",
+              "synonyms": [
+                "D suspended fourth",
+                "D suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "D7sus4",
+              "synonyms": [
+                "D seventh suspended fourth",
+                "D 7 suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Eb",
+              "synonyms": [
+                "E flat"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Ebm",
+              "synonyms": [
+                "E flat minor"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Ebaug",
+              "synonyms": [
+                "E flat augmented"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Ebdim",
+              "synonyms": [
+                "E flat diminished"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Eb7",
+              "synonyms": [
+                "E flat seventh",
+                "E flat 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Ebm7",
+              "synonyms": [
+                "E flat minor seventh",
+                "E flat minor 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Ebmaj7",
+              "synonyms": [
+                "E flat major seventh",
+                "E flat major 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Eb6",
+              "synonyms": [
+                "E flat sixth",
+                "E flat 6"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Ebm6",
+              "synonyms": [
+                "E flat minor sixth",
+                "E flat minor 6"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Ebadd9",
+              "synonyms": [
+                "E flat add ninth",
+                "E flat add 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Ebm9",
+              "synonyms": [
+                "E flat minor ninth",
+                "E flat minor 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Eb9",
+              "synonyms": [
+                "E flat ninth",
+                "E flat 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Ebsus2",
+              "synonyms": [
+                "E flat suspended second",
+                "E flat suspended 2"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Ebsus4",
+              "synonyms": [
+                "E flat suspended fourth",
+                "E flat suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Eb7sus4",
+              "synonyms": [
+                "E flat seventh suspended fourth",
+                "E flat 7 suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "E",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Em",
+              "synonyms": [
+                "E minor"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Eaug",
+              "synonyms": [
+                "E augmented"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Edim",
+              "synonyms": [
+                "E diminished"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "E7",
+              "synonyms": [
+                "E seventh"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Em7",
+              "synonyms": [
+                "E minor seventh",
+                "E minor 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Emaj7",
+              "synonyms": [
+                "E major seventh",
+                "E major 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "E6",
+              "synonyms": [
+                "E sixth"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Em6",
+              "synonyms": [
+                "E minor sixth",
+                "E minor 6"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Eadd9",
+              "synonyms": [
+                "E add ninth",
+                "E add 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Em9",
+              "synonyms": [
+                "E minor ninth",
+                "E minor 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "E9",
+              "synonyms": [
+                "E ninth"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Esus2",
+              "synonyms": [
+                "E suspended second",
+                "E suspended 2"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Esus4",
+              "synonyms": [
+                "E suspended fourth",
+                "E suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "E7sus4",
+              "synonyms": [
+                "E seventh suspended fourth",
+                "E 7 suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "F",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Fm",
+              "synonyms": [
+                "F minor"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Faug",
+              "synonyms": [
+                "F augmented"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Fdim",
+              "synonyms": [
+                "F diminished"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "F7",
+              "synonyms": [
+                "F seventh"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Fm7",
+              "synonyms": [
+                "F minor seventh",
+                "F minor 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Fmaj7",
+              "synonyms": [
+                "F major seventh",
+                "F major 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "F6",
+              "synonyms": [
+                "F sixth"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Fm6",
+              "synonyms": [
+                "F minor sixth",
+                "F minor 6"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Fadd9",
+              "synonyms": [
+                "F add ninth",
+                "F add 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Fm9",
+              "synonyms": [
+                "F minor ninth",
+                "F minor 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "F9",
+              "synonyms": [
+                "F ninth"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Fsus2",
+              "synonyms": [
+                "F suspended second",
+                "F suspended 2"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Fsus4",
+              "synonyms": [
+                "F suspended fourth",
+                "F suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "F7sus4",
+              "synonyms": [
+                "F seventh suspended fourth",
+                "F 7 suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gb",
+              "synonyms": [
+                "G flat"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gbm",
+              "synonyms": [
+                "G flat minor"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gbaug",
+              "synonyms": [
+                "G flat augmented"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gbdim",
+              "synonyms": [
+                "G flat diminished"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gb7",
+              "synonyms": [
+                "G flat seventh",
+                "G flat 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gbm7",
+              "synonyms": [
+                "G flat minor seventh",
+                "G flat minor 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gbmaj7",
+              "synonyms": [
+                "G flat major seventh",
+                "G flat major 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gb6",
+              "synonyms": [
+                "G flat sixth",
+                "G flat 6"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gbm6",
+              "synonyms": [
+                "G flat minor sixth",
+                "G flat minor 6"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gbadd9",
+              "synonyms": [
+                "G flat add ninth",
+                "G flat add 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gbm9",
+              "synonyms": [
+                "G flat minor ninth",
+                "G flat minor 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gb9",
+              "synonyms": [
+                "G flat ninth",
+                "G flat 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gbsus2",
+              "synonyms": [
+                "G flat suspended second",
+                "G flat suspended 2"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gbsus4",
+              "synonyms": [
+                "G flat suspended fourth",
+                "G flat suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gb7sus4",
+              "synonyms": [
+                "G flat seventh suspended fourth",
+                "G flat 7 suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "G",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gm",
+              "synonyms": [
+                "G minor"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gaug",
+              "synonyms": [
+                "G augmented"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gdim",
+              "synonyms": [
+                "G diminished"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "G7",
+              "synonyms": [
+                "G seventh"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gm7",
+              "synonyms": [
+                "G minor seventh",
+                "G minor 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gmaj7",
+              "synonyms": [
+                "G major seventh",
+                "G major 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "G6",
+              "synonyms": [
+                "G sixth"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gm6",
+              "synonyms": [
+                "G minor sixth",
+                "G minor 6"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gadd9",
+              "synonyms": [
+                "G add ninth",
+                "G add 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gm9",
+              "synonyms": [
+                "G minor ninth",
+                "G minor 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "G9",
+              "synonyms": [
+                "G ninth"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gsus2",
+              "synonyms": [
+                "G suspended second",
+                "G suspended 2"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Gsus4",
+              "synonyms": [
+                "G suspended fourth",
+                "G suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "G7sus4",
+              "synonyms": [
+                "G seventh suspended fourth",
+                "G 7 suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Ab",
+              "synonyms": [
+                "A flat"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Abm",
+              "synonyms": [
+                "A flat minor"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Abaug",
+              "synonyms": [
+                "A flat augmented"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Abdim",
+              "synonyms": [
+                "A flat diminished"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Ab7",
+              "synonyms": [
+                "A flat seventh",
+                "A flat 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Abm7",
+              "synonyms": [
+                "A flat minor seventh",
+                "A flat minor 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Abmaj7",
+              "synonyms": [
+                "A flat major seventh",
+                "A flat major 7"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Ab6",
+              "synonyms": [
+                "A flat sixth",
+                "A flat 6"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Abm6",
+              "synonyms": [
+                "A flat minor sixth",
+                "A flat minor 6"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Abadd9",
+              "synonyms": [
+                "A flat add ninth",
+                "A flat add 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Abm9",
+              "synonyms": [
+                "A flat minor ninth",
+                "A flat minor 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Ab9",
+              "synonyms": [
+                "A flat ninth",
+                "A flat suspended 9"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Absus2",
+              "synonyms": [
+                "A flat suspended second",
+                "A flat suspended 2"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Absus4",
+              "synonyms": [
+                "A flat suspended fourth",
+                "A flat suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Ab7sus4",
+              "synonyms": [
+                "A flat seventh suspended fourth",
+                "A flat 7 suspended 4"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Ddim",
+              "synonyms": [
+                "D diminished"
+              ]
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "A sharp",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "C sharp",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "D sharp",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "F sharp",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "G sharp",
+              "synonyms": []
+            }
+          }
+        ]
+      }
 };
 
 const handlers = {
-    'LaunchRequest': function () {
-        this.emit('GetFact');
-    },
-    'GetNewFactIntent': function () {
-        this.emit('GetFact');
-    },
-    'GetFact': function () {
-        // Get a random space fact from the space facts list
-        // Use this.t() to get corresponding language data
-        const factArr = this.t('FACTS');
-        const factIndex = Math.floor(Math.random() * factArr.length);
-        const randomFact = factArr[factIndex];
-
-        // Create speech output
-        const speechOutput = this.t('GET_FACT_MESSAGE') + randomFact;
-        this.emit(':tellWithCard', speechOutput, this.t('SKILL_NAME'), randomFact);
-    },
-    'AMAZON.HelpIntent': function () {
-        const speechOutput = this.t('HELP_MESSAGE');
-        const reprompt = this.t('HELP_MESSAGE');
-        this.emit(':ask', speechOutput, reprompt);
-    },
-    'AMAZON.CancelIntent': function () {
-        this.emit(':tell', this.t('STOP_MESSAGE'));
-    },
-    'AMAZON.StopIntent': function () {
-        this.emit(':tell', this.t('STOP_MESSAGE'));
-    },
+  // Intent that's requested when no intent intially spoken
+  'LaunchRequest': function () {
+    // Session attribute for requested chord to learn
+    this.attributes['chordRequest'] = "";
+    // Alexa's speech output for welcoming user
+    this.response.speak("Welcome to Ukulele Fingers! What chord would you like to learn?").listen("What chord would you like to learn?");
+    // TODO: Add function that tells user what chord to play
+  },
+  'getFingers': function () {
+    // TODO: Add function that tells user what chord to play
+  },
+  'AMAZON.HelpIntent': function () {
+    const speechOutput = this.t('HELP_MESSAGE');
+    const reprompt = this.t('HELP_MESSAGE');
+    this.emit(':ask', speechOutput, reprompt);
+  },
+  'AMAZON.CancelIntent': function () {
+    this.emit(':tell', this.t('STOP_MESSAGE'));
+  },
+  'AMAZON.StopIntent': function () {
+    this.emit(':tell', this.t('STOP_MESSAGE'));
+  },
 };
 
 exports.handler = function (event, context) {
-    const alexa = Alexa.handler(event, context);
-    alexa.APP_ID = APP_ID;
-    // To enable string internationalization (i18n) features, set a resources object.
-    alexa.resources = languageStrings;
-    alexa.registerHandlers(handlers);
-    alexa.execute();
+  const alexa = Alexa.handler(event, context);
+  alexa.APP_ID = APP_ID;
+  alexa.registerHandlers(handlers);
+  alexa.execute();
 };
