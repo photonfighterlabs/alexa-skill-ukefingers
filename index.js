@@ -1803,6 +1803,17 @@ const handlers = {
       case "a 7th": // TODO: TEST
         this.response.speak('To play the A seventh chord, put your index finger on the first fret of the third string');
         break;
+      case "a minor 7th": // TODO: TEST
+        this.response.speak('To play the A minor seventh chord, you don\'t need to hold any strings');
+        break;
+      case "a major 7th": // TODO: TEST
+        this.response.speak('To play the A major seventh chord, put your index finger on the first fret of the fourth string,\
+        and put your middle finger on the first fret of the third string');
+        break;
+      case "a 6th": // TODO: TEST
+        this.response.speak('To play the A sixth chord, put your index finger on the second fret of the fourth string,\
+        put your middle finger on the first fret of the third string, and put your ring finger on the second fret of the second string');
+        break;
     }
     this.emit(':responseReady');
   },
