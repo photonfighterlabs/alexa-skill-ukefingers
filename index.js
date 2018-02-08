@@ -1766,6 +1766,8 @@ const ukuleleChordsList = {
           }
         ]
       }
+    ]
+  }
 };
 
 const handlers = {
