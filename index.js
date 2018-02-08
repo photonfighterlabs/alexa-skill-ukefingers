@@ -1789,7 +1789,7 @@ const handlers = {
         this.response.speak('To play the A chord, put your index finger on the first fret of the third string, and put your\
         middle finger on the second fret of the fourth string');
         break;
-    }
+    } // TODO: Add the other 184 chords
     this.emit(':responseReady');
   },
   'AMAZON.HelpIntent': function () {
