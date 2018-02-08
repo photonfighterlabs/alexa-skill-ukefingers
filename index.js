@@ -1784,12 +1784,26 @@ const handlers = {
     this.attributes['chordRequest'] = this.event.request.intent.slots.CHORD.value;
     var chord2learn = this.attributes['chordRequest'];
     // Switch statment to find what chord is being requested and give a response
-    switch (chord2learn){
+    switch (chord2learn){ // TODO: Add the other 184 chords
       case "a":
         this.response.speak('To play the A chord, put your index finger on the first fret of the third string, and put your\
         middle finger on the second fret of the fourth string');
         break;
-    } // TODO: Add the other 184 chords
+      case "a minor": // TODO: TEST
+        this.response.speak('To play the A minor chord, put your middle finger on the second fret of the fourth string');
+        break;
+      case "a augmented": // TODO: TEST
+        this.response.speak('To play the A augmented chord, put your index finger on the second fret of the fourth string,\
+        put your middle finger on the first fret of the third string, put your ring finger on the first fret of the second string,\
+        and put your pinkie finger on the fourth fret of the first string');
+        break;
+      case "a diminished": // TODO: finish writing A diminished
+        this.response.speak('To play the A diminished chord, put ');
+        break;
+      case "a 7th": // TODO: TEST
+        this.response.speak('To play the A seventh chord, put your index finger on the first fret of the third string');
+        break;
+    }
     this.emit(':responseReady');
   },
   'AMAZON.HelpIntent': function () {
