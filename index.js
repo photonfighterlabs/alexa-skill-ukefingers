@@ -1825,6 +1825,19 @@ const handlers = {
         this.response.speak('To play the A add ninth chord, put your middle finger on the second fret of the fourth string,\
         put your index finger on the first fret of the third string, and put your pinkie finger on the second fret of the first string');
         break;
+      case "a minor 9th": // TODO: TEST
+        this.repsonse.speak('To play the A minor ninth chord, put your index finger on the second fret of the fourth string, and put your\
+        ring finger on the second fret of the first string');
+        break;
+      case "a 9th": // TODO: TEST
+        this.response.speak('To play the A ninth chord, put your index finger on the first fret of the third string, and put your\
+        middle finger on the second fret of the first string');
+        break;
+      case "a suspended second": // TODO: TEST
+        this.response.speak('To play the A suspended second chord, put your index finger on the second fret of the fourth string,\
+        put your middle finger on the second fret of the first string, put your ring finger on the fourth fret of the third string,\
+        and put your pinkie finger on the fifth fret of the second string');
+        break;
     }
     this.emit(':responseReady');
   },
