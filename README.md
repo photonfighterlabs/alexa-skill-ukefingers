@@ -10,6 +10,10 @@ After building [RedHawks Facts](https://github.com/warpaltarpers/alexa-skill-red
 
 * **Maxwell Walters** - [warpaltarpers](https://github.com/warpaltarpers)
 
+### Contributors
+
+* **Chandler Davis** - [photonfighter](https://github.com/photonfighter)
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://github.com/warpaltarpers/alexa-skill-ukefingers/blob/master/CONTRIBUTING.md) for the code of conduct, and the process for submitting pull requests.
