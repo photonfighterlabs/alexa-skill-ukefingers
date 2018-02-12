@@ -1838,6 +1838,7 @@ const handlers = {
         put your middle finger on the second fret of the first string, put your ring finger on the fourth fret of the third string,\
         and put your pinkie finger on the fifth fret of the second string');
         break;
+      // PHOTONFIGHTER: START BELOW THIS LINE
     }
     this.emit(':responseReady');
   },
