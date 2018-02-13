@@ -1845,6 +1845,51 @@ const handlers = {
       case "a 7th suspended 4th":
         this.response.speak('To play the A seventh suspended fourth chord, put your middle finger on the second fret of the third string');
         break;
+      case "a sharp": // TODO: TEST
+        this.response.speak('To play the A sharp chord, put your index finger on the third fret of the fourth string,\
+        put your middle finger on the second fret of the third string, put your ring finger on the first fret of the second string,\
+        and put your pinkie finger on the first fret of the first string');
+        break;
+      case "b flat": // TODO: TEST
+        this.response.speak('To play the B flat chord, put your index finger on the third fret of the fourth string,\
+        put your middle finger on the second fret of the third string, put your ring finger on the first fret of the second string,\
+        and put your pinkie finger on the first fret of the first string');
+        break;
+      case "b flat minor": // TODO: TEST
+        this.response.speak('To play the B flat minor chord, put your index finger on the third fret of the fourth string,\
+        put your middle finger on the first fret of the third string, put your ring finger on the first fret of the second string,\
+        and put your pinkie finger on the first fret of the first string');
+        break;
+      case "b flat augmented": // TODO: TEST
+        this.response.speak('To play the B flat augmented chord, put your index finger on the third fret of the fourth string,\
+        put your middle finger on the second fret of the third string, put your ring finger on the second fret of the second string,\
+        and put your pinkie finger on the first fret of the first string');
+        break;
+      case "b flat diminished": // TODO: TEST
+        this.response.speak('To play the B flat diminished chord, put your index finger on the third fret of the fourth string,\
+        put your middle finger on the first fret of the third string, and put your pinkie finger on the first fret of the first string');
+        break;
+      case "b flat 7th": // TODO: TEST
+        this.response.speak('To play the B flat seventh chord, put your index finger on the first fret of the fourth string, put your\
+        middle finger on the second fret of the third string, put your ring finger on the first fret of the second string, and put your pinkie\
+        finger on the first fret of the first string');
+        break;
+      case "b flat minor 7th": // TODO: TEST
+        this.response.speak('To play the B flat minor seventh chord, put your fingers on the first fret of each string');
+        break;
+      case "b flat major 7th": // TODO: TEST
+        this.response.speak('To play the B flat major seventh chord, put your index finger on the third fret of the fourth string,\
+        put your middle finger on the second fret of the third string, and put your ring finger on the first fret of the second string');
+        break;
+      case "b flat 6th": // TODO: TEST
+        this.response.speak('To play the B flat sixth chord, put your index finger on the second fret of the third string,\
+        put your middle finger on the first fret of the second string, and put your pinkie finger on the first fret of the first string');
+        break;
+      case "b flat minor 6th": // TODO: TEST
+        this.response.speak('To play the B flat minor sixth chord, put your index finger on the third fret of the fourth string,\
+        put your middle finger on the first fret of the third string, put your ring finger on the third fret of the second string,\
+        and put your pinkie finger on the first fret of the first string');
+        break;
       // PHOTONFIGHTER: START BELOW THIS LINE
     }
     this.emit(':responseReady');
