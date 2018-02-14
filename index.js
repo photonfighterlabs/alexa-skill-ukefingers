@@ -1900,7 +1900,7 @@ const handlers = {
         put your middle finger on the first fret of the third string, put your ring finger on the first fret of the second string\
         and put your pinkie finger on the third fret of the first string');
         break;
-      case "b flat 9th":            // TODO: TEST
+      case "b flat 9th":            // TODO: TEST & SPELLCHECK
         this.response.speak('To play the B flat ninth chord, put your index finger n the third fret of the fourth string, put your middle\
         finger on the second fret of the third string, put your ring fingr on the fourth fret of the second string, and put your\
         your pinkie finger on the third fret of the first string');
