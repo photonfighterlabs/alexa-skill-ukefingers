@@ -1799,6 +1799,7 @@ const handlers = {
     mods['6th'] = '6';
     mods['4th'] = '4';
     mods['2nd'] = '2';
+    mods['second'] = '2';
     mods['a'] = 'A';
     mods['b'] = 'B';
     mods['c'] = 'C';
