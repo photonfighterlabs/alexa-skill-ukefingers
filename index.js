@@ -136,7 +136,8 @@ const ukuleleChordsList = {
               "value": "Asus2",
               "synonyms": [
                 "A suspended second",
-                "A suspended 2"
+                "A suspended 2",
+                "a suspended 2nd"
               ]
             }
           },
