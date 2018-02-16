@@ -136,8 +136,7 @@ const ukuleleChordsList = {
               "value": "Asus2",
               "synonyms": [
                 "A suspended second",
-                "A suspended 2",
-                "a suspended 2nd"
+                "A suspended 2"
               ]
             }
           },
@@ -1784,9 +1783,10 @@ const handlers = {
     // Setting up 'chord2learn' variable based on 'chordRequest' attribute
     this.attributes['chordRequest'] = this.event.request.intent.slots.CHORD.value;
     var chord2learn = this.attributes['chordRequest'];
+    chord2learn = chord2learn.toLowerCase();
 
 
-    var requestSplitArray = chord2learn.toLowercase().split(' ');
+    var requestSplitArray = chord2learn.toLowerCase().split(' ');
     var mods = {};
     mods['major'] = 'maj';
     mods['minor'] = 'm';
