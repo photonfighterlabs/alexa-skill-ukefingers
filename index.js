@@ -1,5 +1,6 @@
 'use strict';
-import { getFingering } from 'getFingering.js';
+var gitFingering = require('./getFingering.js');
+)
 
 const Alexa = require('alexa-sdk');
 
@@ -1785,8 +1786,8 @@ const handlers = {
     this.attributes['chordRequest'] = this.event.request.intent.slots.CHORD.value;
     var chord2learn = this.attributes['chordRequest'];
 
-    var algResponse = getFingering(chord2learn);
-    this.response.speak(algResponse);
+    var algResponse = getFingering.getFingering(chord2learn);
+    this.response.speak(algResponse)
 
 
     this.emit(':responseReady');

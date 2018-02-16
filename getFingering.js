@@ -1,5 +1,4 @@
 export function getFingering(chordRequest) {
-	var chordRequest = 'a suspended 2nd'
 var requestSplitArray = chordRequest.split(' ');
 var mods = {};
 mods['major'] = 'maj';
