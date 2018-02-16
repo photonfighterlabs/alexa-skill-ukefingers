@@ -1,4 +1,4 @@
-# Ukulele Fingers ![chords_left_to_add 155](https://img.shields.io/badge/chords_left_to_add-155-red.svg)
+# Ukulele Fingers ![chords_left_to_add 183](https://img.shields.io/badge/chords_left_to_add-183-red.svg)
 
 A skill for Amazon's personal assistant Alexa that will tell you the finger positioning for ukulele chords.
 
@@ -9,9 +9,6 @@ After building [RedHawks Facts](https://github.com/warpaltarpers/alexa-skill-red
 ## Authors
 
 * **Maxwell Walters** - [warpaltarpers](https://github.com/warpaltarpers)
-
-### Contributors
-
 * **Chandler Davis** - [photonfighter](https://github.com/photonfighter)
 
 ## Contributing
