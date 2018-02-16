@@ -1,6 +1,5 @@
 'use strict';
-var gitFingering = require('./getFingering.js');
-)
+var getFingering = require('./getFingering.js');
 
 const Alexa = require('alexa-sdk');
 

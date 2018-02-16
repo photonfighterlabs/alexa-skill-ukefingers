@@ -1,4 +1,4 @@
-export function getFingering(chordRequest) {
+function getFingering(chordRequest) {
 var requestSplitArray = chordRequest.split(' ');
 var mods = {};
 mods['major'] = 'maj';
