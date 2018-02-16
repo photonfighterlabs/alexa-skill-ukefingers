@@ -1783,10 +1783,11 @@ const handlers = {
     // Setting up 'chord2learn' variable based on 'chordRequest' attribute
     this.attributes['chordRequest'] = this.event.request.intent.slots.CHORD.value;
     var chord2learn = this.attributes['chordRequest'];
+
     chord2learn = chord2learn.toLowerCase();
-
-
     var requestSplitArray = chord2learn.split(' ');
+
+    // The purpose of the mods object is to translate the chordRequest into something uniform that we can work with.
     var mods = {};
     mods['major'] = 'maj';
     mods['minor'] = 'm';
@@ -1820,36 +1821,37 @@ const handlers = {
     mods[9] = 'ninth';
 
 
-
+    // The chords object stores all of the chords in a numerical representation.
+    // format: [startFret, fingersUsed, [String1[fret, finger]], [string2[fret,finger]], etc. to string4]
     var chords = {};
     //TODO Add all of the chord specifications from the Java program...
     chords['B7sus4'] = [1, 4, [2, 4], [2, 3], [4, 2], [2, 1]];
     chords['Asus2'] = [2, 4, [1, 2], [4, 4], [3, 3], [1, 1]];
 
-
+    // Similar to mods, except this time we're translating our numerical data into spoken word.
     var fingerTranslator = {};
     fingerTranslator[1] = 'index';
     fingerTranslator[2] = 'middle';
     fingerTranslator[3] = 'ring';
     fingerTranslator[4] = 'pinky';
 
-
+    // Iterates over each word in the requestSplitArray and translates it using the mods object.
     for (var i = 0; i < requestSplitArray.length; i++) {
     	requestSplitArray[i] = mods[requestSplitArray[i]];
     }
 
+    // Grabs the chord in question from the chords object
     var chordArray = chords[requestSplitArray.join('')];
 
     var chordName = requestSplitArray.join('');
     var startFret = chordArray[0];
     var fingersUsed = chordArray[1];
 
+    // Each string is represented as an object. The fret field is offset by the startFret to allow for easier data entry.
     var string1 = {};
     string1.fret = chordArray[2][0] + (startFret - 1);
     string1.finger = chordArray[2][1];
     string1.id = 'first';
-
-
 
     var string2 = {};
     string2.fret = chordArray[3][0] + (startFret - 1);
@@ -1866,8 +1868,9 @@ const handlers = {
     string4.finger = chordArray[5][1];
     string4.id = 'fourth';
 
+    // In order to articulate the fingering correctly, we need to know which strings will have fingers on them.
+    // This loop iterates through the chordArray (but only the strings) and adds them to the array if they contain anything other than zeros.
     var activeStrings = [];
-
     for(var i = 2; i < chordArray.length; i++) {
     	if (chordArray[i] !== 0) {
     		if ((i-1) == 1) {
@@ -1886,7 +1889,8 @@ const handlers = {
     }
 
 
-
+    // Our base responses are basically just skeletons. There are four different ones to correspond with the number of fingers
+    // required to play the chord.
     var baseResponse1 = [
     	'To play the ',
     	chord2learn,
@@ -1966,12 +1970,11 @@ const handlers = {
     	' string',
     ];
 
+    // Chooses which baseResponse to use, and stores the full string in algResponse.
     var baseResponses = [baseResponse1, baseResponse2, baseResponse3, baseResponse4];
-
     var algResponse = baseResponses[fingersUsed-1].join('');
+
     this.response.speak(algResponse);
-
-
     this.emit(':responseReady');
   },
   'AMAZON.HelpIntent': function () {
