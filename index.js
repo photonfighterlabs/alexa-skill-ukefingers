@@ -1785,7 +1785,7 @@ const handlers = {
     var chord2learn = this.attributes['chordRequest'];
     chord2learn = chord2learn.toLowerCase();
 
-    
+
     var requestSplitArray = chord2learn.split(' ');
     var mods = {};
     mods['major'] = 'maj';
@@ -1888,7 +1888,7 @@ const handlers = {
 
     var baseResponse1 = [
     	'To play the ',
-    	chord2lean,
+    	chord2learn,
     	' chord, place your index finger on the ',
     	mods[activeStrings[0].fret],
     	' fret of the ',
