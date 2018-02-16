@@ -1786,6 +1786,7 @@ const handlers = {
     var chord2learn = this.attributes['chordRequest'];
 
     var algResponse = getFingering(chord2learn);
+    this.response.speak(algResponse);
 
 
     this.emit(':responseReady');
