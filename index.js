@@ -1785,8 +1785,8 @@ const handlers = {
     var chord2learn = this.attributes['chordRequest'];
     chord2learn = chord2learn.toLowerCase();
 
-
-    var requestSplitArray = chord2learn.toLowerCase().split(' ');
+    
+    var requestSplitArray = chord2learn.split(' ');
     var mods = {};
     mods['major'] = 'maj';
     mods['minor'] = 'm';
