@@ -138,6 +138,12 @@ exports.parseChordResponse = function (chord2learn)  {
   chords['Csus2'] = [1, 3, [3, 3], [3, 2], [2, 1], [0, 0]];
   chords['Csus4'] = [1, 2, [3, 3], [1, 1], [0, 0], [0, 0]];
   chords['C7sus4'] = [1, 2, [1, 2], [1, 1], [0, 0], [0, 0]];
+  chords['C#'] = [1, 4, [4, 4], [1, 3], [1, 2], [1, 1]];
+
+  // D Chords
+  chords['Db'] = [1, 4, [4, 4], [1, 3], [1, 2], [1, 1]];
+  chords['Dbm'] = [1, 4, [4, 4], [4, 3], [4, 2], [1, 1]];
+  chords['Dbaug'] = [1, 3, [0, 0], [1, 3], [1, 2], [2, 1]];
 
   // Similar to mods, except this time we're translating our numerical data into spoken word.
   var fingerTranslator = {};
