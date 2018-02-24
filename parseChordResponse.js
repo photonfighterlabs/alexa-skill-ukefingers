@@ -157,6 +157,21 @@ exports.parseChordResponse = function (chord2learn)  {
   chords['Dbsus4'] = [1, 4, [4, 4], [2, 3], [1, 2], [1, 1]];
   chords['Db7sus4'] = [1, 4, [2, 4], [2, 3], [1, 2], [1, 1]];
 
+  chords['D'] = [1, 3, [0, 0], [2, 3], [2, 2], [2, 1]];
+  chords['Dm'] = [1, 3, [0, 0], [1, 1], [2, 3], [2, 2]];
+  chords['Daug'] = [1, 4, [1, 1], [2, 3], [2, 2], [3, 4]];
+  chords['Ddim'] = [1, 3, [0, 0], [1, 3], [2, 2], [1, 1]];
+  chords['D7'] = [1, 4, [3, 4], [2, 3], [2, 2], [2, 1]];
+  chords['Dm7'] = [1, 4, [3, 4], [1, 1], [2, 3], [2, 2]];
+  chords['Dmaj7'] = [1, 4, [4, 4], [2, 3], [2, 2], [2, 1]];
+  chords['D6'] = [1, 4, [2, 4], [2, 3], [2, 2], [2, 1]];
+  chords['Dm6'] = [1, 4, [2, 4], [1, 3], [2, 2], [2, 1]];
+  chords['Dadd9'] = [2, 4, [4, 4], [1, 3], [3, 2], [1, 1]];
+  chords['Dm9'] = [2, 3, [4, 4], [0, 0], [4, 3], [1, 1]];
+  chords['D9'] = [1, 4, [3, 4], [2, 2], [4, 3], [2, 1]];
+  chords['Dsus2'] = [1, 2, [0, 0], [0, 0], [2, 2], [2, 1]];
+  chords['Dsus4'] = [1, 2, [0, 0], [3, 2], [2, 1], [0, 0]];
+  chords['D7sus4'] = [1, 4, [3, 4], [3, 3], [2, 2], [2, 1]];
 
   // Similar to mods, except this time we're translating our numerical data into spoken word.
   var fingerTranslator = {};
