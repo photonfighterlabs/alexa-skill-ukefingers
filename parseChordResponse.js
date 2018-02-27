@@ -197,6 +197,15 @@ exports.parseChordResponse = function (chord2learn)  {
   chords['Edim'] = [1, 2, [1, 3], [0, 0], [1, 1], [0, 0]];
   chords['E7'] = [1, 3, [2, 3], [0, 0], [2, 2], [1, 1]];
   chords['Em7'] = [2, 3, [2, 3], [0, 0], [2, 2], [0, 0]];
+  chords['Emaj7'] = [1, 3, [2, 2], [0, 0], [3, 3], [1, 1]];
+  chords['E6'] = [1, 4, [4, 4], [4, 3], [4, 2], [4, 1]];
+  chords['Em6'] = [1, 2, [2, 2], [0, 0], [1, 1], [0, 0]];
+  chords['Eadd9'] = [1, 4, [2, 3], [2, 2], [4, 4], [1, 1]];
+  chords['Em9'] = [1, 3, [2, 3], [2, 2], [4, 4], [0, 0]];
+  chords['E9'] = [1, 4, [2, 4], [2, 3], [2, 2], [1, 1]];
+  chords['Esus2'] = [1, 4, [2, 4], [2, 3], [4, 2], [4, 1]];
+  chords['Esus4'] = [2, 4, [1, 4], [4, 3], [3, 2], [1, 1]];
+  chords['E7sus4'] = [2, 4, [4, 4], [4, 3], [3, 2], [3, 1]];
 
 
   // Similar to mods, except this time we're translating our numerical data into spoken word.
