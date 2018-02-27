@@ -1,4 +1,4 @@
-# Ukulele Fingers ![chords_left_to_add 75](https://img.shields.io/badge/chords_left_to_add-75-orange.svg)
+# Ukulele Fingers ![chords_left_to_add 62](https://img.shields.io/badge/chords_left_to_add-62-orange.svg)
 
 A skill for Amazon's personal assistant Alexa that will tell you the finger positioning for ukulele chords.
 
