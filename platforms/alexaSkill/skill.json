@@ -1,0 +1,22 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:864633573214:function:ukeFingers"
+        },
+        "interfaces": []
+      }
+    },
+    "manifestVersion": "1.0",
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "Ukulele Fingers",
+          "summary": "",
+          "description": ""
+        }
+      }
+    }
+  }
+}
