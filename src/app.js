@@ -18,7 +18,6 @@ const app = new App();
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    //databaseURL: 'https://ukulele-fingers.firebaseio.com'
 });
 
 var db = admin.firestore();
