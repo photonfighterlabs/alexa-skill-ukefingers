@@ -8,15 +8,29 @@ const { App } = require('jovo-framework');
 const { Alexa } = require('jovo-platform-alexa');
 const { GoogleAssistant } = require('jovo-platform-googleassistant');
 const { JovoDebugger } = require('jovo-plugin-debugger');
+const { Firestore } = require('jovo-db-firestore');
 const ParseChordResponse = require('./parseChordResponse.js');
+var admin = require('firebase-admin');
+
+var serviceAccount = require('./ukulele-fingers-firebase-adminsdk-n4pi7-b01956aca4.json')
 
 const app = new App();
+
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    //databaseURL: 'https://ukulele-fingers.firebaseio.com'
+});
+
+var db = admin.firestore();
 
 app.use(
     new Alexa(),
     new GoogleAssistant(),
     new JovoDebugger(),
+    new Firestore()
 );
+
+var chor
 
 
 // ------------------------------------------------------------------
@@ -25,7 +39,15 @@ app.use(
 
 app.setHandler({
     LAUNCH() {
-        this.ask("Welcome to Ukulele Fingers! What chord would you like to learn?");
+        this.tell('launching');
+        var chords = db.collection('chords');
+        var getDoc = chords.doc('Am').get()
+            .then(doc => {
+                console.log('Document data: ', doc.data());
+            })
+            .catch(err => {
+                console.log(err);
+            })
     },
 
     getFingers() {
@@ -33,7 +55,14 @@ app.setHandler({
         var chord2learn = this.$session.$data.chordRequest;
 
         var algResponse = ParseChordResponse.parseChordResponse(chord2learn);
-        this.tell(algResponse);
+        var parseForFirestore = ParseChordResponse.parseForFirestore(chord2learn);
+
+        var chord = db.collection('chords').doc(parseForFirestore);
+        var getDoc = chord.get().then(doc => {
+            console.log('Chord: ' + doc.data());
+        }).catch(err => {
+            console.log(err);
+        });
     }
 
 });
