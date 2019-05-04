@@ -1,0 +1,1347 @@
+{
+	"invocation": "ukulele fingers",
+	"alexa": {
+		"interactionModel": {
+			"prompts": [
+				{
+					"id": "Elicit.Intent-getFingers.IntentSlot-CHORD",
+					"variations": [
+						{
+							"type": "PlainText",
+							"value": "What chord did you want to learn?"
+						},
+						{
+							"type": "PlainText",
+							"value": "Which chord did you want to learn?"
+						}
+					]
+				}
+			],
+			"dialog": {
+				"intents": [
+					{
+						"name": "getFingers",
+						"confirmationRequired": false,
+						"slots": [
+							{
+								"name": "CHORD",
+								"type": "ukuleleChords",
+								"elicitationRequired": true,
+								"confirmationRequired": false,
+								"prompts": {
+									"elicitation": "Elicit.Intent-getFingers.IntentSlot-CHORD"
+								}
+							},
+							{
+								"name": "MISHEARD",
+								"type": "misheardWords",
+								"elicitationRequired": false,
+								"confirmationRequired": false
+							}
+						]
+					}
+				]
+			},
+			"languageModel": {
+				"intents": [
+					{
+						"name": "AMAZON.CancelIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.HelpIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.StopIntent",
+						"samples": []
+					}
+				]
+			}
+		}
+	},
+	"intents": [
+		{
+			"name": "getFingers",
+			"phrases": [
+				"how do I play the {CHORD} {MISHEARD}",
+				"what is the position for {CHORD} {MISHEARD}",
+				"what is the fingering for {CHORD} {MISHEARD}",
+				"how do I play a {CHORD} {MISHEARD}",
+				"how do you play a {CHORD} {MISHEARD}",
+				"how do you play the {CHORD} {MISHEARD}",
+				"how do you play an {CHORD} {MISHEARD}",
+				"how do I play an {CHORD} {MISHEARD}",
+				"I'd like to learn a {MISHEARD}",
+				"How do I play this {MISHEARD}",
+				"What's the position for this {MISHEARD}",
+				"What is the position for {MISHEARD}",
+				"Where do I put my fingers for this {MISHEARD}",
+				"Where do I put my fingers",
+				"how to play the {CHORD} {MISHEARD}"
+			],
+			"inputs": [
+				{
+					"name": "CHORD",
+					"type": "ukuleleChords",
+					"alexa": {
+						"samples": [
+							"{CHORD}",
+							"The {CHORD} chord",
+							"I want to learn the {CHORD} chord"
+						]
+					}
+				},
+				{
+					"name": "MISHEARD",
+					"type": "misheardWords"
+				}
+			]
+		}
+	],
+	"inputTypes": [
+		{
+			"name": "ukuleleChords",
+			"values": [
+				{
+					"value": "A",
+					"synonyms": []
+				},
+				{
+					"value": "Am",
+					"synonyms": [
+						"A minor"
+					]
+				},
+				{
+					"value": "Aaug",
+					"synonyms": [
+						"A augmented"
+					]
+				},
+				{
+					"value": "Adim",
+					"synonyms": [
+						"A diminished"
+					]
+				},
+				{
+					"value": "A7",
+					"synonyms": [
+						"A seventh"
+					]
+				},
+				{
+					"value": "Am7",
+					"synonyms": [
+						"A minor seventh",
+						"A minor 7"
+					]
+				},
+				{
+					"value": "Amaj7",
+					"synonyms": [
+						"A major seventh",
+						"A major 7"
+					]
+				},
+				{
+					"value": "A6",
+					"synonyms": [
+						"A sixth"
+					]
+				},
+				{
+					"value": "Am6",
+					"synonyms": [
+						"A minor sixth",
+						"A minor 6"
+					]
+				},
+				{
+					"value": "Amaj6",
+					"synonyms": [
+						"A major sixth",
+						"A major 6"
+					]
+				},
+				{
+					"value": "Aadd9",
+					"synonyms": [
+						"A add ninth",
+						"A add 9"
+					]
+				},
+				{
+					"value": "Am9",
+					"synonyms": [
+						"A minor ninth",
+						"A minor 9"
+					]
+				},
+				{
+					"value": "A9",
+					"synonyms": [
+						"A ninth"
+					]
+				},
+				{
+					"value": "Asus2",
+					"synonyms": [
+						"A suspended second",
+						"A suspended 2"
+					]
+				},
+				{
+					"value": "Asus4",
+					"synonyms": [
+						"A suspended fourth",
+						"A suspended 4"
+					]
+				},
+				{
+					"value": "A7sus4",
+					"synonyms": [
+						"A seventh suspended fourth",
+						"A 7 suspended 4"
+					]
+				},
+				{
+					"value": "Bb",
+					"synonyms": [
+						"bee flat",
+						"B flat"
+					]
+				},
+				{
+					"value": "Bbm",
+					"synonyms": [
+						"bee flat minor",
+						"B flat minor"
+					]
+				},
+				{
+					"value": "Bbaug",
+					"synonyms": [
+						"bee flat augmented",
+						"B flat augmented"
+					]
+				},
+				{
+					"value": "Bbdim",
+					"synonyms": [
+						"bee flat diminished",
+						"B flat diminished"
+					]
+				},
+				{
+					"value": "Bb7",
+					"synonyms": [
+						"bee flat 7",
+						"bee flat seventh",
+						"B flat seventh",
+						"B flat 7"
+					]
+				},
+				{
+					"value": "Bbm7",
+					"synonyms": [
+						"bee flat minor 7",
+						"bee flat minor seventh",
+						"B flat minor seventh",
+						"B flat minor 7"
+					]
+				},
+				{
+					"value": "Bbmaj7",
+					"synonyms": [
+						"bee flat major 7",
+						"bee flat major seventh",
+						"B flat major seventh",
+						"B flat major 7"
+					]
+				},
+				{
+					"value": "Bb6",
+					"synonyms": [
+						"bee flat 6",
+						"bee flat sixth",
+						"B flat sixth",
+						"B flat 6"
+					]
+				},
+				{
+					"value": "Bbm6",
+					"synonyms": [
+						"bee flat minor 6",
+						"bee flat minor sixth",
+						"B flat minor sixth",
+						"B flat minor 6"
+					]
+				},
+				{
+					"value": "Bbadd9",
+					"synonyms": [
+						"bee flat add 9",
+						"bee flat add ninth",
+						"B flat add ninth",
+						"B flat add 9"
+					]
+				},
+				{
+					"value": "Bbm9",
+					"synonyms": [
+						"bee flat minor 9",
+						"bee flat minor ninth",
+						"B flat minor ninth",
+						"B flat minor 9"
+					]
+				},
+				{
+					"value": "Bb9",
+					"synonyms": [
+						"bee flat 9",
+						"bee flat ninth",
+						"B flat ninth",
+						"B flat 9"
+					]
+				},
+				{
+					"value": "Bbsus2",
+					"synonyms": [
+						"bee flat suspended 2",
+						"bee flat suspended second",
+						"B flat suspended second",
+						"B flat suspended 2"
+					]
+				},
+				{
+					"value": "Bbsus4",
+					"synonyms": [
+						"bee flat suspended 4",
+						"bee flat suspended fourth",
+						"B flat suspended fourth",
+						"B flat suspended 4"
+					]
+				},
+				{
+					"value": "Bb7sus4",
+					"synonyms": [
+						"bee flat 7 suspended 4",
+						"bee flat seventh suspended fourth",
+						"B flat seventh suspended fourth",
+						"B flat 7 suspended 4"
+					]
+				},
+				{
+					"value": "B",
+					"synonyms": [
+						"B"
+					]
+				},
+				{
+					"value": "Bm",
+					"synonyms": [
+						"B minor"
+					]
+				},
+				{
+					"value": "Baug",
+					"synonyms": [
+						"B augmented"
+					]
+				},
+				{
+					"value": "Bdim",
+					"synonyms": [
+						"B diminished"
+					]
+				},
+				{
+					"value": "B7",
+					"synonyms": [
+						"B seventh"
+					]
+				},
+				{
+					"value": "Bm7",
+					"synonyms": [
+						"B minor seventh",
+						"B minor 7"
+					]
+				},
+				{
+					"value": "Bmaj7",
+					"synonyms": [
+						"B major seventh",
+						"B major 7"
+					]
+				},
+				{
+					"value": "B6",
+					"synonyms": [
+						"B sixth"
+					]
+				},
+				{
+					"value": "Bm6",
+					"synonyms": [
+						"B minor sixth",
+						"B minor 6"
+					]
+				},
+				{
+					"value": "Badd9",
+					"synonyms": [
+						"B add ninth",
+						"B add 9"
+					]
+				},
+				{
+					"value": "Bm9",
+					"synonyms": [
+						"B minor ninth",
+						"B minor 9"
+					]
+				},
+				{
+					"value": "Bsus2",
+					"synonyms": [
+						"B suspended second",
+						"B suspended 2"
+					]
+				},
+				{
+					"value": "Bsus4",
+					"synonyms": [
+						"B suspended fourth",
+						"B suspended 4"
+					]
+				},
+				{
+					"value": "B7sus4",
+					"synonyms": [
+						"B seventh suspended fourth",
+						"B 7 suspended 4"
+					]
+				},
+				{
+					"value": "C",
+					"synonyms": []
+				},
+				{
+					"value": "Cm",
+					"synonyms": [
+						"C minor"
+					]
+				},
+				{
+					"value": "Caug",
+					"synonyms": [
+						"C augmented"
+					]
+				},
+				{
+					"value": "Cdim",
+					"synonyms": [
+						"C diminished"
+					]
+				},
+				{
+					"value": "C7",
+					"synonyms": [
+						"C seventh"
+					]
+				},
+				{
+					"value": "Cm7",
+					"synonyms": [
+						"C minor seventh",
+						"C minor 7"
+					]
+				},
+				{
+					"value": "Cmaj7",
+					"synonyms": [
+						"C major seventh",
+						"C major 7"
+					]
+				},
+				{
+					"value": "C6",
+					"synonyms": [
+						"C sixth"
+					]
+				},
+				{
+					"value": "Cm6",
+					"synonyms": [
+						"C minor sixth",
+						"C minor 6"
+					]
+				},
+				{
+					"value": "Cadd9",
+					"synonyms": [
+						"C add ninth",
+						"C add 9"
+					]
+				},
+				{
+					"value": "Cm9",
+					"synonyms": [
+						"C minor ninth",
+						"C minor 9"
+					]
+				},
+				{
+					"value": "C9",
+					"synonyms": [
+						"C ninth"
+					]
+				},
+				{
+					"value": "Csus2",
+					"synonyms": [
+						"C suspended second",
+						"C suspended 2"
+					]
+				},
+				{
+					"value": "Csus4",
+					"synonyms": [
+						"C suspended fourth",
+						"C suspended 4"
+					]
+				},
+				{
+					"value": "C7sus4",
+					"synonyms": [
+						"C seventh suspended fourth",
+						"C 7 suspended 4"
+					]
+				},
+				{
+					"value": "Db",
+					"synonyms": [
+						"D flat"
+					]
+				},
+				{
+					"value": "Dbm",
+					"synonyms": [
+						"D flat minor"
+					]
+				},
+				{
+					"value": "Dbaug",
+					"synonyms": [
+						"D flat augmented"
+					]
+				},
+				{
+					"value": "Dbdim",
+					"synonyms": [
+						"D flat diminished"
+					]
+				},
+				{
+					"value": "Db7",
+					"synonyms": [
+						"D flat seventh",
+						"D flat 7"
+					]
+				},
+				{
+					"value": "Dbm7",
+					"synonyms": [
+						"D flat minor seventh",
+						"D flat minor 7"
+					]
+				},
+				{
+					"value": "Dbmaj7",
+					"synonyms": [
+						"D flat major seventh",
+						"D flat major 7"
+					]
+				},
+				{
+					"value": "Db6",
+					"synonyms": [
+						"D flat sixth",
+						"D flat 6"
+					]
+				},
+				{
+					"value": "Dbm6",
+					"synonyms": [
+						"D flat minor sixth",
+						"D flat minor 6"
+					]
+				},
+				{
+					"value": "Dbadd9",
+					"synonyms": [
+						"D flat add ninth",
+						"D flat add 9"
+					]
+				},
+				{
+					"value": "Dbm9",
+					"synonyms": [
+						"D flat minor ninth",
+						"D flat minor 9"
+					]
+				},
+				{
+					"value": "Db9",
+					"synonyms": [
+						"D flat ninth",
+						"D flat 9"
+					]
+				},
+				{
+					"value": "Dbsus2",
+					"synonyms": [
+						"D flat suspended second",
+						"D flat suspended 2"
+					]
+				},
+				{
+					"value": "Dbsus4",
+					"synonyms": [
+						"D flat suspended fourth",
+						"D flat suspended 4"
+					]
+				},
+				{
+					"value": "Db7sus4",
+					"synonyms": [
+						"D flat seventh suspended fourth",
+						"D flat 7 suspended 4"
+					]
+				},
+				{
+					"value": "D",
+					"synonyms": []
+				},
+				{
+					"value": "Dm",
+					"synonyms": [
+						"D minor"
+					]
+				},
+				{
+					"value": "Daug",
+					"synonyms": [
+						"D augmented"
+					]
+				},
+				{
+					"value": "D7",
+					"synonyms": [
+						"D seventh"
+					]
+				},
+				{
+					"value": "Dm7",
+					"synonyms": [
+						"D minor seventh",
+						"D minor 7"
+					]
+				},
+				{
+					"value": "Dmaj7",
+					"synonyms": [
+						"D major seventh",
+						"D major 7"
+					]
+				},
+				{
+					"value": "D6",
+					"synonyms": [
+						"D sixth"
+					]
+				},
+				{
+					"value": "Dm6",
+					"synonyms": [
+						"D minor 6",
+						"D minor sixth"
+					]
+				},
+				{
+					"value": "Dadd9",
+					"synonyms": [
+						"D add ninth",
+						"D add 9"
+					]
+				},
+				{
+					"value": "Dm9",
+					"synonyms": [
+						"D minor ninth",
+						"D minor 9"
+					]
+				},
+				{
+					"value": "D9",
+					"synonyms": [
+						"D ninth"
+					]
+				},
+				{
+					"value": "Dsus2",
+					"synonyms": [
+						"D suspended second",
+						"D suspended 2"
+					]
+				},
+				{
+					"value": "Dsus4",
+					"synonyms": [
+						"D suspended fourth",
+						"D suspended 4"
+					]
+				},
+				{
+					"value": "D7sus4",
+					"synonyms": [
+						"D seventh suspended fourth",
+						"D 7 suspended 4"
+					]
+				},
+				{
+					"value": "Eb",
+					"synonyms": [
+						"E flat"
+					]
+				},
+				{
+					"value": "Ebm",
+					"synonyms": [
+						"E flat minor"
+					]
+				},
+				{
+					"value": "Ebaug",
+					"synonyms": [
+						"E flat augmented"
+					]
+				},
+				{
+					"value": "Ebdim",
+					"synonyms": [
+						"E flat diminished"
+					]
+				},
+				{
+					"value": "Eb7",
+					"synonyms": [
+						"E flat seventh",
+						"E flat 7"
+					]
+				},
+				{
+					"value": "Ebm7",
+					"synonyms": [
+						"E flat minor seventh",
+						"E flat minor 7"
+					]
+				},
+				{
+					"value": "Ebmaj7",
+					"synonyms": [
+						"E flat major seventh",
+						"E flat major 7"
+					]
+				},
+				{
+					"value": "Eb6",
+					"synonyms": [
+						"E flat sixth",
+						"E flat 6"
+					]
+				},
+				{
+					"value": "Ebm6",
+					"synonyms": [
+						"E flat minor sixth",
+						"E flat minor 6"
+					]
+				},
+				{
+					"value": "Ebadd9",
+					"synonyms": [
+						"E flat add ninth",
+						"E flat add 9"
+					]
+				},
+				{
+					"value": "Ebm9",
+					"synonyms": [
+						"E flat minor ninth",
+						"E flat minor 9"
+					]
+				},
+				{
+					"value": "Eb9",
+					"synonyms": [
+						"E flat ninth",
+						"E flat 9"
+					]
+				},
+				{
+					"value": "Ebsus2",
+					"synonyms": [
+						"E flat suspended second",
+						"E flat suspended 2"
+					]
+				},
+				{
+					"value": "Ebsus4",
+					"synonyms": [
+						"E flat suspended fourth",
+						"E flat suspended 4"
+					]
+				},
+				{
+					"value": "Eb7sus4",
+					"synonyms": [
+						"E flat seventh suspended fourth",
+						"E flat 7 suspended 4"
+					]
+				},
+				{
+					"value": "E",
+					"synonyms": []
+				},
+				{
+					"value": "Em",
+					"synonyms": [
+						"E minor"
+					]
+				},
+				{
+					"value": "Eaug",
+					"synonyms": [
+						"E augmented"
+					]
+				},
+				{
+					"value": "Edim",
+					"synonyms": [
+						"E diminished"
+					]
+				},
+				{
+					"value": "E7",
+					"synonyms": [
+						"E seventh"
+					]
+				},
+				{
+					"value": "Em7",
+					"synonyms": [
+						"E minor seventh",
+						"E minor 7"
+					]
+				},
+				{
+					"value": "Emaj7",
+					"synonyms": [
+						"E major seventh",
+						"E major 7"
+					]
+				},
+				{
+					"value": "E6",
+					"synonyms": [
+						"E sixth"
+					]
+				},
+				{
+					"value": "Em6",
+					"synonyms": [
+						"E minor sixth",
+						"E minor 6"
+					]
+				},
+				{
+					"value": "Eadd9",
+					"synonyms": [
+						"E add ninth",
+						"E add 9"
+					]
+				},
+				{
+					"value": "Em9",
+					"synonyms": [
+						"E minor ninth",
+						"E minor 9"
+					]
+				},
+				{
+					"value": "E9",
+					"synonyms": [
+						"E ninth"
+					]
+				},
+				{
+					"value": "Esus2",
+					"synonyms": [
+						"E suspended second",
+						"E suspended 2"
+					]
+				},
+				{
+					"value": "Esus4",
+					"synonyms": [
+						"E suspended fourth",
+						"E suspended 4"
+					]
+				},
+				{
+					"value": "E7sus4",
+					"synonyms": [
+						"E seventh suspended fourth",
+						"E 7 suspended 4"
+					]
+				},
+				{
+					"value": "F",
+					"synonyms": []
+				},
+				{
+					"value": "Fm",
+					"synonyms": [
+						"F minor"
+					]
+				},
+				{
+					"value": "Faug",
+					"synonyms": [
+						"F augmented"
+					]
+				},
+				{
+					"value": "Fdim",
+					"synonyms": [
+						"F diminished"
+					]
+				},
+				{
+					"value": "F7",
+					"synonyms": [
+						"F seventh"
+					]
+				},
+				{
+					"value": "Fm7",
+					"synonyms": [
+						"F minor seventh",
+						"F minor 7"
+					]
+				},
+				{
+					"value": "Fmaj7",
+					"synonyms": [
+						"F major seventh",
+						"F major 7"
+					]
+				},
+				{
+					"value": "F6",
+					"synonyms": [
+						"F sixth"
+					]
+				},
+				{
+					"value": "Fm6",
+					"synonyms": [
+						"F minor sixth",
+						"F minor 6"
+					]
+				},
+				{
+					"value": "Fadd9",
+					"synonyms": [
+						"F add ninth",
+						"F add 9"
+					]
+				},
+				{
+					"value": "Fm9",
+					"synonyms": [
+						"F minor ninth",
+						"F minor 9"
+					]
+				},
+				{
+					"value": "F9",
+					"synonyms": [
+						"F ninth"
+					]
+				},
+				{
+					"value": "Fsus2",
+					"synonyms": [
+						"F suspended second",
+						"F suspended 2"
+					]
+				},
+				{
+					"value": "Fsus4",
+					"synonyms": [
+						"F suspended fourth",
+						"F suspended 4"
+					]
+				},
+				{
+					"value": "F7sus4",
+					"synonyms": [
+						"F seventh suspended fourth",
+						"F 7 suspended 4"
+					]
+				},
+				{
+					"value": "Gb",
+					"synonyms": [
+						"G flat"
+					]
+				},
+				{
+					"value": "Gbm",
+					"synonyms": [
+						"G flat minor"
+					]
+				},
+				{
+					"value": "Gbaug",
+					"synonyms": [
+						"G flat augmented"
+					]
+				},
+				{
+					"value": "Gbdim",
+					"synonyms": [
+						"G flat diminished"
+					]
+				},
+				{
+					"value": "Gb7",
+					"synonyms": [
+						"G flat seventh",
+						"G flat 7"
+					]
+				},
+				{
+					"value": "Gbm7",
+					"synonyms": [
+						"G flat minor seventh",
+						"G flat minor 7"
+					]
+				},
+				{
+					"value": "Gbmaj7",
+					"synonyms": [
+						"G flat major seventh",
+						"G flat major 7"
+					]
+				},
+				{
+					"value": "Gb6",
+					"synonyms": [
+						"G flat sixth",
+						"G flat 6"
+					]
+				},
+				{
+					"value": "Gbm6",
+					"synonyms": [
+						"G flat minor sixth",
+						"G flat minor 6"
+					]
+				},
+				{
+					"value": "Gbadd9",
+					"synonyms": [
+						"G flat add ninth",
+						"G flat add 9"
+					]
+				},
+				{
+					"value": "Gbm9",
+					"synonyms": [
+						"G flat minor ninth",
+						"G flat minor 9"
+					]
+				},
+				{
+					"value": "Gb9",
+					"synonyms": [
+						"G flat ninth",
+						"G flat 9"
+					]
+				},
+				{
+					"value": "Gbsus2",
+					"synonyms": [
+						"G flat suspended second",
+						"G flat suspended 2"
+					]
+				},
+				{
+					"value": "Gbsus4",
+					"synonyms": [
+						"G flat suspended fourth",
+						"G flat suspended 4"
+					]
+				},
+				{
+					"value": "Gb7sus4",
+					"synonyms": [
+						"G flat seventh suspended fourth",
+						"G flat 7 suspended 4"
+					]
+				},
+				{
+					"value": "G",
+					"synonyms": []
+				},
+				{
+					"value": "Gm",
+					"synonyms": [
+						"G minor"
+					]
+				},
+				{
+					"value": "Gaug",
+					"synonyms": [
+						"G augmented"
+					]
+				},
+				{
+					"value": "Gdim",
+					"synonyms": [
+						"G diminished"
+					]
+				},
+				{
+					"value": "G7",
+					"synonyms": [
+						"G seventh"
+					]
+				},
+				{
+					"value": "Gm7",
+					"synonyms": [
+						"G minor seventh",
+						"G minor 7"
+					]
+				},
+				{
+					"value": "Gmaj7",
+					"synonyms": [
+						"G major seventh",
+						"G major 7"
+					]
+				},
+				{
+					"value": "G6",
+					"synonyms": [
+						"G sixth"
+					]
+				},
+				{
+					"value": "Gm6",
+					"synonyms": [
+						"G minor sixth",
+						"G minor 6"
+					]
+				},
+				{
+					"value": "Gadd9",
+					"synonyms": [
+						"G add ninth",
+						"G add 9"
+					]
+				},
+				{
+					"value": "Gm9",
+					"synonyms": [
+						"G minor ninth",
+						"G minor 9"
+					]
+				},
+				{
+					"value": "G9",
+					"synonyms": [
+						"G ninth"
+					]
+				},
+				{
+					"value": "Gsus2",
+					"synonyms": [
+						"G suspended second",
+						"G suspended 2"
+					]
+				},
+				{
+					"value": "Gsus4",
+					"synonyms": [
+						"G suspended fourth",
+						"G suspended 4"
+					]
+				},
+				{
+					"value": "G7sus4",
+					"synonyms": [
+						"G seventh suspended fourth",
+						"G 7 suspended 4"
+					]
+				},
+				{
+					"value": "Ab",
+					"synonyms": [
+						"A flat"
+					]
+				},
+				{
+					"value": "Abm",
+					"synonyms": [
+						"A flat minor"
+					]
+				},
+				{
+					"value": "Abaug",
+					"synonyms": [
+						"A flat augmented"
+					]
+				},
+				{
+					"value": "Abdim",
+					"synonyms": [
+						"A flat diminished"
+					]
+				},
+				{
+					"value": "Ab7",
+					"synonyms": [
+						"A flat seventh",
+						"A flat 7"
+					]
+				},
+				{
+					"value": "Abm7",
+					"synonyms": [
+						"A flat minor seventh",
+						"A flat minor 7"
+					]
+				},
+				{
+					"value": "Abmaj7",
+					"synonyms": [
+						"A flat major seventh",
+						"A flat major 7"
+					]
+				},
+				{
+					"value": "Ab6",
+					"synonyms": [
+						"A flat sixth",
+						"A flat 6"
+					]
+				},
+				{
+					"value": "Abm6",
+					"synonyms": [
+						"A flat minor sixth",
+						"A flat minor 6"
+					]
+				},
+				{
+					"value": "Abadd9",
+					"synonyms": [
+						"A flat add ninth",
+						"A flat add 9"
+					]
+				},
+				{
+					"value": "Abm9",
+					"synonyms": [
+						"A flat minor ninth",
+						"A flat minor 9"
+					]
+				},
+				{
+					"value": "Ab9",
+					"synonyms": [
+						"A flat ninth",
+						"A flat suspended 9"
+					]
+				},
+				{
+					"value": "Absus2",
+					"synonyms": [
+						"A flat suspended second",
+						"A flat suspended 2"
+					]
+				},
+				{
+					"value": "Absus4",
+					"synonyms": [
+						"A flat suspended fourth",
+						"A flat suspended 4"
+					]
+				},
+				{
+					"value": "Ab7sus4",
+					"synonyms": [
+						"A flat seventh suspended fourth",
+						"A flat 7 suspended 4"
+					]
+				},
+				{
+					"value": "Ddim",
+					"synonyms": [
+						"D diminished"
+					]
+				},
+				{
+					"value": "A sharp",
+					"synonyms": []
+				},
+				{
+					"value": "C sharp",
+					"synonyms": []
+				},
+				{
+					"value": "D sharp",
+					"synonyms": []
+				},
+				{
+					"value": "F sharp",
+					"synonyms": []
+				},
+				{
+					"value": "G sharp",
+					"synonyms": []
+				}
+			]
+		},
+		{
+			"name": "misheardWords",
+			"values": [
+				{
+					"value": "chord",
+					"synonyms": [
+						"court",
+						"core"
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,3 +1,57 @@
+exports.parseForFirestore = function (chord2learn) {
+  chord2learn = chord2learn.toLowerCase();
+  var cleansingArray = chord2learn.split('');
+  console.log("CA before: " + cleansingArray);
+  for(var z = 0; z < cleansingArray.length; z++) {
+    if(cleansingArray[z] == '.') {
+      cleansingArray.splice(z,z);
+    }
+  }
+  console.log("CA after: " + cleansingArray);
+  var requestSplitArray = cleansingArray.join('').split(' ');
+
+  var mods = {};
+  mods['major'] = 'maj';
+  mods['minor'] = 'm';
+  mods['augmented'] = 'aug';
+  mods['diminished'] = 'dim';
+  mods['suspended'] = 'sus';
+  mods['add'] = 'add';
+  mods['9th'] = '9';
+  mods['7th'] = '7';
+  mods['6th'] = '6';
+  mods['4th'] = '4';
+  mods['2nd'] = '2';
+  mods['second'] = '2';
+  mods['a'] = 'A';
+  mods['b'] = 'B';
+  mods['c'] = 'C';
+  mods['d'] = 'D';
+  mods['e'] = 'E';
+  mods['f'] = 'F';
+  mods['g'] = 'G';
+  mods['A'] = 'A';
+  mods['B'] = 'B';
+  mods['C'] = 'C';
+  mods['D'] = 'D';
+  mods['E'] = 'E';
+  mods['F'] = 'F';
+  mods['G'] = 'G';
+  mods['sharp'] = '#';
+  mods['flat'] = 'b';
+
+
+  requestSplitArray[0] = requestSplitArray[0].toUpperCase();
+  chord2learn = requestSplitArray.join(' ');
+  console.log("Before: " + requestSplitArray);
+  for (var i = 0; i < requestSplitArray.length; i++) {
+    requestSplitArray[i] = requestSplitArray[i].toLowerCase();
+    requestSplitArray[i] = mods[requestSplitArray[i]];
+  }
+
+  return requestSplitArray.join('');
+}
+
 exports.parseChordResponse = function (chord2learn)  {
   chord2learn = chord2learn.toLowerCase();
   var cleansingArray = chord2learn.split('');
@@ -59,7 +113,7 @@ exports.parseChordResponse = function (chord2learn)  {
   //TODO Add all of the chord specifications from the Java program...
   // A Chords
   chords['A'] = [1, 2, [0, 0], [0, 0], [1, 1], [2, 1]];
-  chords['Am'] = [1, 1, [0, 0], [0, 0], [0, 0], [2, 1]];
+  chords['Am'] = [1, 1, [0, 0], [0, 0], [0, 0], [2, 2]];
   chords['Aaug'] = [1, 4, [4, 4], [1, 2], [1, 1], [2, 3]];
   chords['Adim'] = [1, 4, [3, 4], [2, 2], [3, 3], [2, 1]];
   chords['A7'] = [1, 1, [0, 0], [0, 0], [1, 1], [0, 0]];
