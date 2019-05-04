@@ -6,73 +6,83 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class ChordEntryTool {
-    private ArrayList<String> chords = new ArrayList<>();
-    private static Scanner scanner;
-    private static PrintWriter printWriter;
+    public ArrayList<String> chordStrings = new ArrayList<>();
+    public Scanner scan;
 
-    public ChordEntryTool(String fileName) throws IOException {
-        scanner = new Scanner(System.in);
-        printWriter = new PrintWriter(new FileWriter(fileName, true));
+    public ChordEntryTool() {
+
     }
 
     public static void main(String[] args) throws IOException {
-        ChordEntryTool chordEntryTool = new ChordEntryTool("chords.txt");
-        
         boolean flag = true;
+        ChordEntryTool chordTool = new ChordEntryTool();
 
         while (flag) {
-            printWriter.println(chordEntryTool.createArrayFromInput());
+            chordTool.chordStrings.add(chordTool.getChord());
             System.out.println("Done? ");
-            flag = (scanner.next().equals("y")) ? false : true;
+            if ((chordTool.scan.next()).equals("y")) {
+                flag = false;
+            }
+
         }
 
-        scanner.close();
-        printWriter.close();
+        PrintWriter writer = new PrintWriter(new FileWriter("chords.txt"));
+
+        for (String c: chordTool.chordStrings) {
+            writer.println(c);
+        }
+
+        writer.close();
     }
 
-    private String createArrayFromInput() {
-        String chordName = "";
+    public String getChord() {
+        String chordName;
         int fingersUsed = 0;
-        int fingerOneString = 0;
-        int fingerOneFret = 0; 
-        int fingerTwoString = 0;
-        int fingerTwoFret = 0;
-        int fingerThreeString = 0;
-        int fingerThreeFret = 0;
-        int fingerFourString = 0;
-        int fingerFourFret = 0;
+        int startFret = 0;
+        int stringOneFret = 0;
+        int stringOneFinger = 0;
+        int stringTwoFret = 0;
+        int stringTwoFinger = 0;
+        int stringThreeFret = 0;
+        int stringThreeFinger = 0;
+        int stringFourFret = 0;
+        int stringFourFinger = 0;
 
-        System.out.println("Chord Name? ");
-        chordName = scanner.next();
-        
-        System.out.println("Fingers Used? ");
-        fingersUsed = scanner.nextInt();
+        System.out.println("Name:");
+		chordName = scan.next();
+		System.out.println("Starting fret: ");
+		startFret = scan.nextInt();
+		System.out.println("Fingers used: ");
+		fingersUsed = scan.nextInt();
+		System.out.println("String 1 Fret: (0 if not used)");
+		string1Fret = scan.nextInt();
+		if(string1Fret != 0) {
+			System.out.println("String 1 Finger: ");
+			string1Finger = scan.nextInt();
+		}
+		
+		System.out.println("String 2 Fret: (0 if not used)");
+		string2Fret = scan.nextInt();
+		if(string2Fret != 0) {
+			System.out.println("String 2 Finger: ");
+			string2Finger = scan.nextInt();
+		}
+		System.out.println("String 3 Fret: (0 if not used)");
+		string3Fret = scan.nextInt();
+		if(string3Fret != 0) {
+			System.out.println("String 3 Finger: ");
+			string3Finger = scan.nextInt();
+		}
+		System.out.println("String 4 Fret: (0 if not used)");
+		string4Fret = scan.nextInt();
+		if(string4Fret != 0) {
+			System.out.println("String 4 Finger:");
+			string4Finger = scan.nextInt();
+		}
+		
+		String concat = "chords[\'" + chordName + "\'] = [" + startFret + ", " + fingersUsed + ", [" + string1Fret + ", " + string1Finger + "], [" + string2Fret + ", " + string2Finger + "], [" + string3Fret + ", " + string3Finger + "], [" + string4Fret + ", " + string4Finger + "]];";
+		return concat;
 
-        System.out.println("Finger 1 String? ");
-        fingerOneString = scanner.nextInt();
 
-        System.out.println("Finger 1 Fret? ");
-        fingerOneFret = scanner.nextInt();
-
-        System.out.println("Finger 2 String? ");
-        fingerTwoString = scanner.nextInt();
-
-        System.out.println("Finger 2 Fret? ");
-        fingerTwoFret = scanner.nextInt();
-
-        System.out.println("Finger 3 String? ");
-        fingerThreeString = scanner.nextInt();
-
-        System.out.println("Finger 3 Fret? ");
-        fingerThreeFret = scanner.nextInt();
-
-        System.out.println("Finger 4 String? ");
-        fingerFourString = scanner.nextInt();
-
-        System.out.println("Finger 4 Fret? ");
-        fingerFourFret = scanner.nextInt();
-
-        String concatenated = "chords['" + chordName + "'] = [" + fingersUsed + ", [" + fingerOneString + ", " + fingerOneFret + "], [" + fingerTwoString + ", " + fingerTwoFret + "], [" + fingerThreeString + ", " + fingerThreeFret + "], [" + fingerFourString + ", " + fingerFourFret + "]];";
-        return concatenated;
     }
 }
