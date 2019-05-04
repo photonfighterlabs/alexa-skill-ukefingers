@@ -10,7 +10,7 @@ const { GoogleAssistant } = require('jovo-platform-googleassistant');
 const { JovoDebugger } = require('jovo-plugin-debugger');
 const { Firestore } = require('jovo-db-firestore');
 const ParseChordResponse = require('./parseChordResponse.js');
-const ResponseParser = require('./response-parser.js');
+const RequestParser = require('./request-parser.js');
 var admin = require('firebase-admin');
 
 var serviceAccount = require('./ukulele-fingers-firebase-adminsdk-n4pi7-b01956aca4.json')
@@ -30,8 +30,6 @@ app.use(
     new Firestore()
 );
 
-var chor
-
 
 // ------------------------------------------------------------------
 // APP LOGIC
@@ -39,25 +37,17 @@ var chor
 
 app.setHandler({
     LAUNCH() {
-        this.tell('launching');
-        var chords = db.collection('chords');
-        var getDoc = chords.doc('Am').get()
-            .then(doc => {
-                console.log('Document data: ', doc.data());
-            })
-            .catch(err => {
-                console.log(err);
-            })
+        this.toIntent(getFingers());
     },
 
-    getFingers() {
+    async getFingers() {
         this.$session.$data.chordRequest = this.$inputs.CHORD.value;
         var chord2learn = this.$session.$data.chordRequest;
 
+        console.log('chord2learn: ' + chord2learn);
         
-        ResponseParser.cleanSpokenChord(chord2learn);
+        this.tell(await RequestParser.buildSpokenResponse(db, chord2learn));
 
-        this.tell('response recieved');
         // var algResponse = ParseChordResponse.parseChordResponse(chord2learn);
         // var parseForFirestore = ParseChordResponse.parseForFirestore(chord2learn);
 
