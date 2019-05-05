@@ -26,43 +26,34 @@
                 "The {CHORD} chord",
                 "I want to learn the {CHORD} chord"
               ]
-            },
-            {
-              "name": "MISHEARD",
-              "type": "misheardWords"
             }
           ],
           "samples": [
-            "how do I play the {CHORD} {MISHEARD}",
-            "what is the position for {CHORD} {MISHEARD}",
-            "what is the fingering for {CHORD} {MISHEARD}",
-            "how do I play a {CHORD} {MISHEARD}",
-            "how do you play a {CHORD} {MISHEARD}",
-            "how do you play the {CHORD} {MISHEARD}",
-            "how do you play an {CHORD} {MISHEARD}",
-            "how do I play an {CHORD} {MISHEARD}",
-            "I'd like to learn a {MISHEARD}",
-            "How do I play this {MISHEARD}",
-            "What's the position for this {MISHEARD}",
-            "What is the position for {MISHEARD}",
-            "Where do I put my fingers for this {MISHEARD}",
-            "Where do I put my fingers",
-            "how to play the {CHORD} {MISHEARD}"
+            "how do I play the {CHORD} ",
+            "what is the position for {CHORD} ",
+            "what is the fingering for {CHORD} ",
+            "how do I play a {CHORD} ",
+            "how do you play a {CHORD} ",
+            "how do you play the {CHORD} ",
+            "how do you play an {CHORD}",
+            "how do I play an {CHORD} ",
+            "how to play the {CHORD} "
           ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
         }
       ],
       "types": [
         {
           "values": [
             {
-              "id": "",
               "name": {
-                "value": "A",
-                "synonyms": []
+                "value": "A"
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Am",
                 "synonyms": [
@@ -71,7 +62,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Aaug",
                 "synonyms": [
@@ -80,7 +70,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Adim",
                 "synonyms": [
@@ -89,7 +78,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "A7",
                 "synonyms": [
@@ -98,7 +86,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Am7",
                 "synonyms": [
@@ -108,7 +95,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Amaj7",
                 "synonyms": [
@@ -118,7 +104,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "A6",
                 "synonyms": [
@@ -127,7 +112,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Am6",
                 "synonyms": [
@@ -137,7 +121,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Amaj6",
                 "synonyms": [
@@ -147,7 +130,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Aadd9",
                 "synonyms": [
@@ -157,7 +139,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Am9",
                 "synonyms": [
@@ -167,7 +148,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "A9",
                 "synonyms": [
@@ -176,7 +156,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Asus2",
                 "synonyms": [
@@ -186,7 +165,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Asus4",
                 "synonyms": [
@@ -196,7 +174,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "A7sus4",
                 "synonyms": [
@@ -206,7 +183,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bb",
                 "synonyms": [
@@ -216,7 +192,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bbm",
                 "synonyms": [
@@ -226,7 +201,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bbaug",
                 "synonyms": [
@@ -236,7 +210,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bbdim",
                 "synonyms": [
@@ -246,7 +219,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bb7",
                 "synonyms": [
@@ -258,7 +230,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bbm7",
                 "synonyms": [
@@ -270,7 +241,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bbmaj7",
                 "synonyms": [
@@ -282,7 +252,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bb6",
                 "synonyms": [
@@ -294,7 +263,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bbm6",
                 "synonyms": [
@@ -306,7 +274,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bbadd9",
                 "synonyms": [
@@ -318,7 +285,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bbm9",
                 "synonyms": [
@@ -330,7 +296,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bb9",
                 "synonyms": [
@@ -342,7 +307,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bbsus2",
                 "synonyms": [
@@ -354,7 +318,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bbsus4",
                 "synonyms": [
@@ -366,7 +329,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bb7sus4",
                 "synonyms": [
@@ -378,7 +340,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "B",
                 "synonyms": [
@@ -387,7 +348,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bm",
                 "synonyms": [
@@ -396,7 +356,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Baug",
                 "synonyms": [
@@ -405,7 +364,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bdim",
                 "synonyms": [
@@ -414,7 +372,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "B7",
                 "synonyms": [
@@ -423,7 +380,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bm7",
                 "synonyms": [
@@ -433,7 +389,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bmaj7",
                 "synonyms": [
@@ -443,7 +398,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "B6",
                 "synonyms": [
@@ -452,7 +406,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bm6",
                 "synonyms": [
@@ -462,7 +415,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Badd9",
                 "synonyms": [
@@ -472,7 +424,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bm9",
                 "synonyms": [
@@ -482,7 +433,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bsus2",
                 "synonyms": [
@@ -492,7 +442,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Bsus4",
                 "synonyms": [
@@ -502,7 +451,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "B7sus4",
                 "synonyms": [
@@ -512,14 +460,11 @@
               }
             },
             {
-              "id": "",
               "name": {
-                "value": "C",
-                "synonyms": []
+                "value": "C"
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Cm",
                 "synonyms": [
@@ -528,7 +473,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Caug",
                 "synonyms": [
@@ -537,7 +481,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Cdim",
                 "synonyms": [
@@ -546,7 +489,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "C7",
                 "synonyms": [
@@ -555,7 +497,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Cm7",
                 "synonyms": [
@@ -565,7 +506,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Cmaj7",
                 "synonyms": [
@@ -575,7 +515,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "C6",
                 "synonyms": [
@@ -584,7 +523,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Cm6",
                 "synonyms": [
@@ -594,7 +532,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Cadd9",
                 "synonyms": [
@@ -604,7 +541,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Cm9",
                 "synonyms": [
@@ -614,7 +550,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "C9",
                 "synonyms": [
@@ -623,7 +558,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Csus2",
                 "synonyms": [
@@ -633,7 +567,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Csus4",
                 "synonyms": [
@@ -643,7 +576,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "C7sus4",
                 "synonyms": [
@@ -653,7 +585,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Db",
                 "synonyms": [
@@ -662,7 +593,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Dbm",
                 "synonyms": [
@@ -671,7 +601,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Dbaug",
                 "synonyms": [
@@ -680,7 +609,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Dbdim",
                 "synonyms": [
@@ -689,7 +617,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Db7",
                 "synonyms": [
@@ -699,7 +626,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Dbm7",
                 "synonyms": [
@@ -709,7 +635,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Dbmaj7",
                 "synonyms": [
@@ -719,7 +644,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Db6",
                 "synonyms": [
@@ -729,7 +653,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Dbm6",
                 "synonyms": [
@@ -739,7 +662,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Dbadd9",
                 "synonyms": [
@@ -749,7 +671,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Dbm9",
                 "synonyms": [
@@ -759,7 +680,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Db9",
                 "synonyms": [
@@ -769,7 +689,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Dbsus2",
                 "synonyms": [
@@ -779,7 +698,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Dbsus4",
                 "synonyms": [
@@ -789,7 +707,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Db7sus4",
                 "synonyms": [
@@ -799,14 +716,11 @@
               }
             },
             {
-              "id": "",
               "name": {
-                "value": "D",
-                "synonyms": []
+                "value": "D"
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Dm",
                 "synonyms": [
@@ -815,7 +729,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Daug",
                 "synonyms": [
@@ -824,7 +737,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "D7",
                 "synonyms": [
@@ -833,7 +745,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Dm7",
                 "synonyms": [
@@ -843,7 +754,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Dmaj7",
                 "synonyms": [
@@ -853,7 +763,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "D6",
                 "synonyms": [
@@ -862,7 +771,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Dm6",
                 "synonyms": [
@@ -872,7 +780,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Dadd9",
                 "synonyms": [
@@ -882,7 +789,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Dm9",
                 "synonyms": [
@@ -892,7 +798,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "D9",
                 "synonyms": [
@@ -901,7 +806,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Dsus2",
                 "synonyms": [
@@ -911,7 +815,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Dsus4",
                 "synonyms": [
@@ -921,7 +824,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "D7sus4",
                 "synonyms": [
@@ -931,7 +833,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Eb",
                 "synonyms": [
@@ -940,7 +841,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Ebm",
                 "synonyms": [
@@ -949,7 +849,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Ebaug",
                 "synonyms": [
@@ -958,7 +857,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Ebdim",
                 "synonyms": [
@@ -967,7 +865,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Eb7",
                 "synonyms": [
@@ -977,7 +874,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Ebm7",
                 "synonyms": [
@@ -987,7 +883,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Ebmaj7",
                 "synonyms": [
@@ -997,7 +892,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Eb6",
                 "synonyms": [
@@ -1007,7 +901,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Ebm6",
                 "synonyms": [
@@ -1017,7 +910,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Ebadd9",
                 "synonyms": [
@@ -1027,7 +919,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Ebm9",
                 "synonyms": [
@@ -1037,7 +928,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Eb9",
                 "synonyms": [
@@ -1047,7 +937,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Ebsus2",
                 "synonyms": [
@@ -1057,7 +946,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Ebsus4",
                 "synonyms": [
@@ -1067,7 +955,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Eb7sus4",
                 "synonyms": [
@@ -1077,14 +964,11 @@
               }
             },
             {
-              "id": "",
               "name": {
-                "value": "E",
-                "synonyms": []
+                "value": "E"
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Em",
                 "synonyms": [
@@ -1093,7 +977,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Eaug",
                 "synonyms": [
@@ -1102,7 +985,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Edim",
                 "synonyms": [
@@ -1111,7 +993,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "E7",
                 "synonyms": [
@@ -1120,7 +1001,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Em7",
                 "synonyms": [
@@ -1130,7 +1010,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Emaj7",
                 "synonyms": [
@@ -1140,7 +1019,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "E6",
                 "synonyms": [
@@ -1149,7 +1027,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Em6",
                 "synonyms": [
@@ -1159,7 +1036,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Eadd9",
                 "synonyms": [
@@ -1169,7 +1045,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Em9",
                 "synonyms": [
@@ -1179,7 +1054,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "E9",
                 "synonyms": [
@@ -1188,7 +1062,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Esus2",
                 "synonyms": [
@@ -1198,7 +1071,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Esus4",
                 "synonyms": [
@@ -1208,7 +1080,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "E7sus4",
                 "synonyms": [
@@ -1218,14 +1089,11 @@
               }
             },
             {
-              "id": "",
               "name": {
-                "value": "F",
-                "synonyms": []
+                "value": "F"
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Fm",
                 "synonyms": [
@@ -1234,7 +1102,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Faug",
                 "synonyms": [
@@ -1243,7 +1110,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Fdim",
                 "synonyms": [
@@ -1252,7 +1118,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "F7",
                 "synonyms": [
@@ -1261,7 +1126,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Fm7",
                 "synonyms": [
@@ -1271,7 +1135,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Fmaj7",
                 "synonyms": [
@@ -1281,7 +1144,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "F6",
                 "synonyms": [
@@ -1290,7 +1152,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Fm6",
                 "synonyms": [
@@ -1300,7 +1161,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Fadd9",
                 "synonyms": [
@@ -1310,7 +1170,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Fm9",
                 "synonyms": [
@@ -1320,7 +1179,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "F9",
                 "synonyms": [
@@ -1329,7 +1187,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Fsus2",
                 "synonyms": [
@@ -1339,7 +1196,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Fsus4",
                 "synonyms": [
@@ -1349,7 +1205,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "F7sus4",
                 "synonyms": [
@@ -1359,7 +1214,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gb",
                 "synonyms": [
@@ -1368,7 +1222,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gbm",
                 "synonyms": [
@@ -1377,7 +1230,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gbaug",
                 "synonyms": [
@@ -1386,7 +1238,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gbdim",
                 "synonyms": [
@@ -1395,7 +1246,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gb7",
                 "synonyms": [
@@ -1405,7 +1255,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gbm7",
                 "synonyms": [
@@ -1415,7 +1264,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gbmaj7",
                 "synonyms": [
@@ -1425,7 +1273,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gb6",
                 "synonyms": [
@@ -1435,7 +1282,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gbm6",
                 "synonyms": [
@@ -1445,7 +1291,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gbadd9",
                 "synonyms": [
@@ -1455,7 +1300,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gbm9",
                 "synonyms": [
@@ -1465,7 +1309,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gb9",
                 "synonyms": [
@@ -1475,7 +1318,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gbsus2",
                 "synonyms": [
@@ -1485,7 +1327,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gbsus4",
                 "synonyms": [
@@ -1495,7 +1336,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gb7sus4",
                 "synonyms": [
@@ -1505,14 +1345,11 @@
               }
             },
             {
-              "id": "",
               "name": {
-                "value": "G",
-                "synonyms": []
+                "value": "G"
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gm",
                 "synonyms": [
@@ -1521,7 +1358,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gaug",
                 "synonyms": [
@@ -1530,7 +1366,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gdim",
                 "synonyms": [
@@ -1539,7 +1374,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "G7",
                 "synonyms": [
@@ -1548,7 +1382,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gm7",
                 "synonyms": [
@@ -1558,7 +1391,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gmaj7",
                 "synonyms": [
@@ -1568,7 +1400,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "G6",
                 "synonyms": [
@@ -1577,7 +1408,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gm6",
                 "synonyms": [
@@ -1587,7 +1417,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gadd9",
                 "synonyms": [
@@ -1597,7 +1426,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gm9",
                 "synonyms": [
@@ -1607,7 +1435,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "G9",
                 "synonyms": [
@@ -1616,7 +1443,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gsus2",
                 "synonyms": [
@@ -1626,7 +1452,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Gsus4",
                 "synonyms": [
@@ -1636,7 +1461,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "G7sus4",
                 "synonyms": [
@@ -1646,7 +1470,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Ab",
                 "synonyms": [
@@ -1655,7 +1478,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Abm",
                 "synonyms": [
@@ -1664,7 +1486,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Abaug",
                 "synonyms": [
@@ -1673,7 +1494,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Abdim",
                 "synonyms": [
@@ -1682,7 +1502,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Ab7",
                 "synonyms": [
@@ -1692,7 +1511,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Abm7",
                 "synonyms": [
@@ -1702,7 +1520,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Abmaj7",
                 "synonyms": [
@@ -1712,7 +1529,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Ab6",
                 "synonyms": [
@@ -1722,7 +1538,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Abm6",
                 "synonyms": [
@@ -1732,7 +1547,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Abadd9",
                 "synonyms": [
@@ -1742,7 +1556,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Abm9",
                 "synonyms": [
@@ -1752,7 +1565,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Ab9",
                 "synonyms": [
@@ -1762,7 +1574,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Absus2",
                 "synonyms": [
@@ -1772,7 +1583,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Absus4",
                 "synonyms": [
@@ -1782,7 +1592,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Ab7sus4",
                 "synonyms": [
@@ -1792,7 +1601,6 @@
               }
             },
             {
-              "id": "",
               "name": {
                 "value": "Ddim",
                 "synonyms": [
@@ -1801,57 +1609,32 @@
               }
             },
             {
-              "id": "",
               "name": {
-                "value": "A sharp",
-                "synonyms": []
+                "value": "A sharp"
               }
             },
             {
-              "id": "",
               "name": {
-                "value": "C sharp",
-                "synonyms": []
+                "value": "C sharp"
               }
             },
             {
-              "id": "",
               "name": {
-                "value": "D sharp",
-                "synonyms": []
+                "value": "D sharp"
               }
             },
             {
-              "id": "",
               "name": {
-                "value": "F sharp",
-                "synonyms": []
+                "value": "F sharp"
               }
             },
             {
-              "id": "",
               "name": {
-                "value": "G sharp",
-                "synonyms": []
+                "value": "G sharp"
               }
             }
           ],
           "name": "ukuleleChords"
-        },
-        {
-          "values": [
-            {
-              "id": "",
-              "name": {
-                "value": "chord",
-                "synonyms": [
-                  "court",
-                  "core"
-                ]
-              }
-            }
-          ],
-          "name": "misheardWords"
         }
       ]
     },
@@ -1860,6 +1643,7 @@
         {
           "name": "getFingers",
           "confirmationRequired": false,
+          "prompts": {},
           "slots": [
             {
               "name": "CHORD",
@@ -1869,16 +1653,11 @@
               "prompts": {
                 "elicitation": "Elicit.Intent-getFingers.IntentSlot-CHORD"
               }
-            },
-            {
-              "name": "MISHEARD",
-              "type": "misheardWords",
-              "elicitationRequired": false,
-              "confirmationRequired": false
             }
           ]
         }
-      ]
+      ],
+      "delegationStrategy": "SKILL_RESPONSE"
     },
     "prompts": [
       {
@@ -1895,5 +1674,6 @@
         ]
       }
     ]
-  }
+  },
+  "version": "2"
 }
