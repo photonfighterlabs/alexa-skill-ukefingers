@@ -179,9 +179,12 @@ exports.buildSpokenResponse = async function (db, spokenChord) {
 }
 
 function cleanSpokenChord(spokenChord) {
-    spokenChord = spokenChord.toLowerCase();
+    if (spokenChord.length == 2)
+        return spokenChord;
 
-    var cleansingArray = spokenChord.split('');
+    let parsedChord = spokenChord.toLowerCase();
+
+    var cleansingArray = parsedChord.split('');
 
     // removes any '.'s
     for (var i = 0; i < cleansingArray.length; i++) {
@@ -267,6 +270,7 @@ function cleanSpokenChord(spokenChord) {
     }
 
     console.log('cleansingArray: ' + cleansingArray.join().toString());
+    
     return cleansingArray.join('').toString();
 
 }

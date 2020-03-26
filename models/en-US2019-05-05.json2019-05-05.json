@@ -22,7 +22,6 @@
 					{
 						"name": "getFingers",
 						"confirmationRequired": false,
-						"prompts": {},
 						"slots": [
 							{
 								"name": "CHORD",
@@ -32,11 +31,16 @@
 								"prompts": {
 									"elicitation": "Elicit.Intent-getFingers.IntentSlot-CHORD"
 								}
+							},
+							{
+								"name": "MISHEARD",
+								"type": "misheardWords",
+								"elicitationRequired": false,
+								"confirmationRequired": false
 							}
 						]
 					}
-				],
-				"delegationStrategy": "SKILL_RESPONSE"
+				]
 			},
 			"languageModel": {
 				"intents": [
@@ -51,10 +55,6 @@
 					{
 						"name": "AMAZON.StopIntent",
 						"samples": []
-					},
-					{
-						"name": "AMAZON.NavigateHomeIntent",
-						"samples": []
 					}
 				]
 			}
@@ -64,15 +64,21 @@
 		{
 			"name": "getFingers",
 			"phrases": [
-				"how do I play the {CHORD} ",
-				"what is the position for {CHORD} ",
-				"what is the fingering for {CHORD} ",
-				"how do I play a {CHORD} ",
-				"how do you play a {CHORD} ",
-				"how do you play the {CHORD} ",
-				"how do you play an {CHORD}",
-				"how do I play an {CHORD} ",
-				"how to play the {CHORD} "
+				"how do I play the {CHORD} {MISHEARD}",
+				"what is the position for {CHORD} {MISHEARD}",
+				"what is the fingering for {CHORD} {MISHEARD}",
+				"how do I play a {CHORD} {MISHEARD}",
+				"how do you play a {CHORD} {MISHEARD}",
+				"how do you play the {CHORD} {MISHEARD}",
+				"how do you play an {CHORD} {MISHEARD}",
+				"how do I play an {CHORD} {MISHEARD}",
+				"I'd like to learn a {MISHEARD}",
+				"How do I play this {MISHEARD}",
+				"What's the position for this {MISHEARD}",
+				"What is the position for {MISHEARD}",
+				"Where do I put my fingers for this {MISHEARD}",
+				"Where do I put my fingers",
+				"how to play the {CHORD} {MISHEARD}"
 			],
 			"inputs": [
 				{
@@ -85,6 +91,10 @@
 							"I want to learn the {CHORD} chord"
 						]
 					}
+				},
+				{
+					"name": "MISHEARD",
+					"type": "misheardWords"
 				}
 			]
 		}
@@ -94,7 +104,8 @@
 			"name": "ukuleleChords",
 			"values": [
 				{
-					"value": "A"
+					"value": "A",
+					"synonyms": []
 				},
 				{
 					"value": "Am",
@@ -415,7 +426,8 @@
 					]
 				},
 				{
-					"value": "C"
+					"value": "C",
+					"synonyms": []
 				},
 				{
 					"value": "Cm",
@@ -611,7 +623,8 @@
 					]
 				},
 				{
-					"value": "D"
+					"value": "D",
+					"synonyms": []
 				},
 				{
 					"value": "Dm",
@@ -801,7 +814,8 @@
 					]
 				},
 				{
-					"value": "E"
+					"value": "E",
+					"synonyms": []
 				},
 				{
 					"value": "Em",
@@ -896,7 +910,8 @@
 					]
 				},
 				{
-					"value": "F"
+					"value": "F",
+					"synonyms": []
 				},
 				{
 					"value": "Fm",
@@ -1092,7 +1107,8 @@
 					]
 				},
 				{
-					"value": "G"
+					"value": "G",
+					"synonyms": []
 				},
 				{
 					"value": "Gm",
@@ -1294,19 +1310,36 @@
 					]
 				},
 				{
-					"value": "A sharp"
+					"value": "A sharp",
+					"synonyms": []
 				},
 				{
-					"value": "C sharp"
+					"value": "C sharp",
+					"synonyms": []
 				},
 				{
-					"value": "D sharp"
+					"value": "D sharp",
+					"synonyms": []
 				},
 				{
-					"value": "F sharp"
+					"value": "F sharp",
+					"synonyms": []
 				},
 				{
-					"value": "G sharp"
+					"value": "G sharp",
+					"synonyms": []
+				}
+			]
+		},
+		{
+			"name": "misheardWords",
+			"values": [
+				{
+					"value": "chord",
+					"synonyms": [
+						"court",
+						"core"
+					]
 				}
 			]
 		}

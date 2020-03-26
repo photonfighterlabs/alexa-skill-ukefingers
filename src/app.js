@@ -9,7 +9,6 @@ const { Alexa } = require('jovo-platform-alexa');
 const { GoogleAssistant } = require('jovo-platform-googleassistant');
 const { JovoDebugger } = require('jovo-plugin-debugger');
 const { Firestore } = require('jovo-db-firestore');
-const ParseChordResponse = require('./parseChordResponse.js');
 const RequestParser = require('./request-parser.js');
 var admin = require('firebase-admin');
 
